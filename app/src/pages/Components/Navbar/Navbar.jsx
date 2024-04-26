@@ -1,4 +1,4 @@
-import Logo from "../Logo/Logo";
+import Logo from '../Logo/Logo';
 
 const Navbar = () => {
   return (
@@ -6,12 +6,12 @@ const Navbar = () => {
       <div className="">
         <div className="flex justify-between items-center">
           <div className="mx-4 mt-10 mb-6">
-            <span>About</span>
-            <span>Contact</span>
+            <button className="mr-4">About</button>
+            <button>Contact</button>
           </div>
-          <Logo/>
+          <Logo />
           <div className="mx-4 mt-10 mb-6">
-            <button>Register</button>
+            <button className="mr-4">Register</button>
             <button>Login</button>
           </div>
         </div>
