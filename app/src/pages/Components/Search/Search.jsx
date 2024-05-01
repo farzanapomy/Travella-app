@@ -17,14 +17,19 @@ const Search = () => {
     },
   ]);
   const [openGuest, setOpenGuest] = useState(false);
-  const [option, setOption] = useState([
-    {
-      adult: 1,
-      Children: 2,
-      room: 101,
-    },
-    {},
-  ]);
+  const [option, setOption] = useState({
+    adult: 1,
+    children: 2,
+    room: 1,
+  });
+  const handleButton = (name, state) => {
+    setOption((pre) => {
+      return {
+        ...pre,
+        [name]: state === 'i' ? option[name] + 1 : option[name] - 1,
+      };
+    });
+  };
   return (
     <div className=" relative">
       <div className="w-full h-fit mx-auto bg-[#494545] p-4 px-10 rounded-md text-white  absolute -bottom-65">
@@ -67,22 +72,67 @@ const Search = () => {
               )}
             </div>
           </div>
-          <div className="w-full flex  justify-between items-center border border-[#979797] px-4 py-2  gap-2 rounded-r-lg ">
+          <div className="relative w-full flex  justify-evenly items-center border border-[#979797] p-2  gap-2 rounded-r-lg ">
             <div>
               <IoMdPerson />
             </div>
             <div>
-              <span className="text-[#D3D3D3] text-sm">
-                {option[0].adult} adult {option[0].Children} Children{' '}
-                {option[0].room} room
+              <span
+                className="text-[#D3D3D3] text-sm"
+                onClick={() => setOpenGuest(!openGuest)}
+              >
+                {option?.adult} adult {option?.children} Children {option?.room}{' '}
+                room
               </span>
-              <div>
-                <span>Adult</span>
-                <button>+</button>
-                <span>1</span>
-                <button>-</button>
-              </div>
             </div>
+            {openGuest && (
+              <div className="absolute top-11 right-0 bg-[#494545] p-4 text-sm ">
+                <div className="flex justify-between items-center gap-3">
+                  <span>Adult</span>
+                  <div className="flex justify-between items-center gap-2">
+                    <button onClick={() => handleButton('adult', 'i')}>
+                      +
+                    </button>
+                    <span>{option.adult}</span>
+                    <button
+                      onClick={() => handleButton('adult', 'd')}
+                      disabled={option.adult <= 1}
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center gap-3">
+                  <span>Children</span>
+                  <div className="flex justify-between items-center gap-2">
+                    <button onClick={() => handleButton('children', 'i')}>
+                      +
+                    </button>
+                    <span>{option.children}</span>
+                    <button
+                      onClick={() => handleButton('children', 'd')}
+                      disabled={option.children <= 0}
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center gap-3">
+                  <span>Room</span>
+                  <div className="flex justify-between items-center gap-2">
+                    <button onClick={() => handleButton('room', 'i')}>+</button>
+                    <span>{option.room}</span>
+                    <button
+                      onClick={() => handleButton('room', 'd')}
+                      disabled={option.room <= 1}
+                      className={`${option.room <= 1 && 'cursor-not-allowed'}`}
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           <div>
             <button className="bg-[#91CB82] py-2.5 px-9 rounded-md mx-3">
