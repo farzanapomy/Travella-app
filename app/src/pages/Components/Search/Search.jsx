@@ -86,42 +86,40 @@ const Search = () => {
               </span>
             </div>
             {openGuest && (
-              <div className="absolute top-11 right-0 bg-[#494545] p-4 text-sm ">
-                <div className="flex justify-between items-center gap-3">
+              <div className="absolute top-11 right-0  bg-[#494545] p-6  text-sm ">
+                <div className="flex justify-between items-center gap-4 mb-2">
                   <span>Adult</span>
                   <div className="flex justify-between items-center gap-2">
-                    <button onClick={() => handleButton('adult', 'i')}>
-                      +
-                    </button>
-                    <span>{option.adult}</span>
                     <button
                       onClick={() => handleButton('adult', 'd')}
                       disabled={option.adult <= 1}
                     >
                       -
                     </button>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center gap-3">
-                  <span>Children</span>
-                  <div className="flex justify-between items-center gap-2">
-                    <button onClick={() => handleButton('children', 'i')}>
+                    <span>{option.adult}</span>
+                    <button onClick={() => handleButton('adult', 'i')}>
                       +
                     </button>
-                    <span>{option.children}</span>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center gap-3 mb-2">
+                  <span>Children</span>
+                  <div className="flex justify-between items-center gap-2">
                     <button
                       onClick={() => handleButton('children', 'd')}
                       disabled={option.children <= 0}
                     >
                       -
                     </button>
+                    <span>{option.children}</span>
+                    <button onClick={() => handleButton('children', 'i')}>
+                      +
+                    </button>
                   </div>
                 </div>
                 <div className="flex justify-between items-center gap-3">
                   <span>Room</span>
                   <div className="flex justify-between items-center gap-2">
-                    <button onClick={() => handleButton('room', 'i')}>+</button>
-                    <span>{option.room}</span>
                     <button
                       onClick={() => handleButton('room', 'd')}
                       disabled={option.room <= 1}
@@ -129,6 +127,8 @@ const Search = () => {
                     >
                       -
                     </button>
+                    <span>{option.room}</span>
+                    <button onClick={() => handleButton('room', 'i')}>+</button>
                   </div>
                 </div>
               </div>
