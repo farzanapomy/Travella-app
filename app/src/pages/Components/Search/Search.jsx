@@ -31,10 +31,10 @@ const Search = () => {
     });
   };
   return (
-    <div className=" relative">
-      <div className="w-full h-fit mx-auto bg-[#494545] p-4 px-10 rounded-md text-white  absolute -bottom-65">
+    <div className="relative">
+      <div className=" w-4/6 md:w-5/6 h-fit mx-auto bg-[#494545] p-4 px-10 rounded-md text-white  absolute right-0 left-0 -bottom-80 md:-bottom-65 ">
         <h1 className="mb-3 font-semibold ">Book your vacation </h1>
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap lg:flex-nowrap w-fit md:w-full mx-auto justify-between items-center gap-3 lg:gap-0">
           <div className="flex justify-between items-center border border-[#979797] rounded-l-lg p-2 gap-2 w-full">
             <div>
               <FaBed />
@@ -43,7 +43,7 @@ const Search = () => {
               <input
                 type="text"
                 placeholder="Where are you going?"
-                className="border-none outline-none rounded-md px-2"
+                className="border-none outline-none rounded-md px-2 placeholder-[#f8f7f7] bg-[#979797] text-white"
               />
             </div>
           </div>
@@ -135,7 +135,7 @@ const Search = () => {
             )}
           </div>
           <div>
-            <button className="bg-[#91CB82] py-2.5 px-9 rounded-md mx-3">
+            <button className="bg-[#91CB82] py-2 px-9 rounded-md md:mx-3  ">
               Search
             </button>
           </div>
