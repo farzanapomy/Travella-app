@@ -32,7 +32,7 @@ const Search = () => {
   };
   return (
     <div className="relative">
-      <div className=" w-4/6 md:w-5/6 h-fit mx-auto bg-[#494545] p-4 px-10 rounded-md text-white  absolute right-0 left-0 -bottom-80 md:-bottom-65 ">
+      <div className=" w-4/6 md:w-5/6 h-fit mx-auto bg-[#494545] p-4 px-10 rounded-md text-white  absolute right-0 left-0 -bottom-80 md:-bottom-55 ">
         <h1 className="mb-3 font-semibold ">Book your vacation </h1>
         <div className="flex flex-wrap lg:flex-nowrap w-fit md:w-full mx-auto justify-between items-center gap-3 lg:gap-0">
           <div className="flex justify-between items-center border border-[#979797] rounded-l-lg p-2 gap-2 w-full">
