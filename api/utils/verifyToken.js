@@ -14,9 +14,20 @@ export const verifyToken = async (req, res, next) => {
     next();
   });
 };
+// verify user
 export const verifyUser = async (req, res, next) => {
   verifyToken(req, res, () => {
     if (req.user.id === req.params.id || req.user.isAdmin) {
+      next();
+    } else {
+      return next(errorFunction(401, 'You are not authorized to login'));
+    }
+  });
+};
+// verify admin
+export const verifyAdmin = async (req, res, next) => {
+  verifyToken(req, res, () => {
+    if (req.user.isAdmin) {
       next();
     } else {
       return next(errorFunction(401, 'You are not authorized to login'));
