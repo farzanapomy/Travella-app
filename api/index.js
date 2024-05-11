@@ -8,6 +8,7 @@ import roomsRoute from './routes/room.js';
 import cookieParser from 'cookie-parser';
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 dotenv.config();
 handleConnection();
 
@@ -15,7 +16,6 @@ app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', usersRoute);
 app.use('/api/v1/hotels', hotelsRoute);
 app.use('/api/v1/rooms', roomsRoute);
-app.use(cookieParser());
 // error handlers
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
