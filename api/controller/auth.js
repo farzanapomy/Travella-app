@@ -1,5 +1,5 @@
 import User from '../models/User.js';
-import { errorFunction } from '../utils/error.js';
+import { errorFunction } from '../utils/handleError.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 export const register = async (req, res, next) => {
@@ -37,9 +37,8 @@ export const login = async (req, res, next) => {
       process.env.JWT_SECRET
     );
     const { password, isAdmin, ...other } = user._doc;
-    console.log('wprdsd', password, isAdmin, 'others info', user);
     res
-      .cookie('access_token', token, {
+      .cookies('access_token', token, {
         httpOnly: true,
       })
       .status(201)

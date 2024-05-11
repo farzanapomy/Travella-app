@@ -1,10 +1,11 @@
 import jwt from 'jsonwebtoken';
-import { errorFunction } from './error.js';
+import { errorFunction } from './handleError.js';
 
 export const verifyToken = async (req, res, next) => {
-  const token = req.cookies.access_token;
+  const token = req?.cookies?.access_token;
   if (!token) {
-    return next(errorFunction(401, 'You are not allowed to login'));
+    console.log(token);
+    return next(errorFunction(401, 'You are not authenticated'));
   }
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
@@ -16,21 +17,21 @@ export const verifyToken = async (req, res, next) => {
 };
 // verify user
 export const verifyUser = async (req, res, next) => {
-  verifyToken(req, res, () => {
+  verifyToken(req, res, next, () => {
     if (req.user.id === req.params.id || req.user.isAdmin) {
       next();
     } else {
-      return next(errorFunction(401, 'You are not authorized to login'));
+      return next(errorFunction(401, 'You are not authorized '));
     }
   });
 };
 // verify admin
 export const verifyAdmin = async (req, res, next) => {
-  verifyToken(req, res, () => {
-    if (req.user.isAdmin) {
+  verifyToken(req, res, next, () => {
+    if (req?.user?.isAdmin) {
       next();
     } else {
-      return next(errorFunction(401, 'You are not authorized to login'));
+      return next(errorFunction(401, 'You are not authorized '));
     }
   });
 };
