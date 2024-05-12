@@ -5,7 +5,7 @@ const RoomSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  roomPrice: {
+  price: {
     type: Number,
     require: true,
   },
@@ -17,9 +17,6 @@ const RoomSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  roomNumbers: {
-    type: [{}],
-    require: true,
-  },
+  roomInfo: [{ roomNumber: { type: Number }, bookedDates: { type: [Date] } }],
 });
 export default mongoose.model('Room', RoomSchema);

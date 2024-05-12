@@ -1,10 +1,20 @@
 import Room from '../models/Room.js';
+import Hotel from '../models/Hotel.js';
+import { errorFunction } from '../utils/handleError.js';
 
 export const createRoom = async (req, res, next) => {
-  const Room = new Room(req.body);
+  const hotelId = req.params.hotelId;
+  const newRoom = new Room(req.body);
   try {
-    const createRoom = await Room.save();
-    res.status(200).json(createRoom);
+    const savedRoom = await newRoom.save();
+    try {
+      await Hotel.findByIdAndUpdate(hotelId, {
+        $push: { rooms: savedRoom._id },
+      });
+    } catch (error) {
+      next(error);
+    }
+    res.status(200).json(savedRoom);
   } catch (error) {
     next(error);
   }
@@ -22,8 +32,16 @@ export const updateRoom = async (req, res, next) => {
   }
 };
 export const deleteRoom = async (req, res, next) => {
+  const hotelId = req.params.hotelId;
   try {
     await Room.findByIdAndDelete(req.params.id);
+    try {
+      await Hotel.findByIdAndUpdate(hotelId, {
+        $pull: { rooms: req.params.id },
+      });
+    } catch (error) {
+      next(error);
+    }
     res.status(200).json('Room has been Delete ');
   } catch (error) {
     next(error);
