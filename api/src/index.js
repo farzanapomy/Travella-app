@@ -17,7 +17,7 @@ app.use('/api/v1/users', usersRoute);
 app.use('/api/v1/hotels', hotelsRoute);
 app.use('/api/v1/rooms', roomsRoute);
 // error handlers
-app.use((err, req, res, next) => {
+app.use((err, req, res, next) => {        
   const errorStatus = err.status || 500;
   const errorMessage = err.message || 'Something went wrong';
   return res
