@@ -2,8 +2,8 @@ import hero from '../../../../assets/hero.svg';
 const HeroSection = () => {
   return (
     <div className="  px-5">
-      <div className=" md:flex justify-between items-center  h-fit mt-22 relative">
-        <div className="w-4/6 mx-auto tracking-tight text-center">
+      <div className=" md:flex justify-between items-center  h-fit mt-18 relative">
+        <div className="w-4/6 mx-auto tracking-tight text-center md:text-start">
           <h1 className="text-5xl md:text-7xl font-bold font-Inter text-white">
             Make your travel wishlist, we’ll do the rest
           </h1>
