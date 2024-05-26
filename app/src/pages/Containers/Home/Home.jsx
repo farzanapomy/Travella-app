@@ -1,6 +1,7 @@
 import LayOut from '../../Components/LayOut/LayOut';
 import HeroSection from '../../Components/Navbar/HeroSection/HeroSection';
 import Navbar from '../../Components/Navbar/Navbar';
+import Search from '../../Components/Search/Search';
 import Hotels from '../Hotels/Hotels';
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
         </div>
       </div>
       <LayOut>
+          <Search />
         <Hotels />
       </LayOut>
     </div>
