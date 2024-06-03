@@ -1,11 +1,11 @@
+import moment from 'moment';
+import { useState } from 'react';
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 import { FaBed } from 'react-icons/fa';
 import { IoMdPerson } from 'react-icons/io';
 import { SlCalender } from 'react-icons/sl';
-import { DateRange } from 'react-date-range';
-import { useState } from 'react';
-import 'react-date-range/dist/styles.css';
-import 'react-date-range/dist/theme/default.css';
-import moment from 'moment';
 
 const Search = () => {
   const [openDate, setOpenDate] = useState(false);
@@ -15,6 +15,15 @@ const Search = () => {
       endDate: new Date(),
       key: 'selection',
     },
+  ]);
+  const [openGuest, setOpenGuest] = useState(false);
+  const [option, setOption] = useState([
+    {
+      adult: 1,
+      Children: 2,
+      room: 101,
+    },
+    {},
   ]);
   return (
     <div className=" relative">
@@ -64,8 +73,15 @@ const Search = () => {
             </div>
             <div>
               <span className="text-[#D3D3D3] text-sm">
-                2 adult 2 children 1 room
+                {option[0].adult} adult {option[0].Children} Children{' '}
+                {option[0].room} room
               </span>
+              <div>
+                <span>Adult</span>
+                <button>+</button>
+                <span>1</span>
+                <button>-</button>
+              </div>
             </div>
           </div>
           <div>
