@@ -1,5 +1,10 @@
+
 const SingleHotel = () => {
-  return <div>SingleHotel</div>;
+  return (
+    <div>
+     
+    </div>
+  );
 };
 
 export default SingleHotel;
