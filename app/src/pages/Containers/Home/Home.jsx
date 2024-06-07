@@ -1,3 +1,4 @@
+import Featured from '../../Components/Featured/Featured';
 import LayOut from '../../Components/LayOut/LayOut';
 import HeroSection from '../../Components/Navbar/HeroSection/HeroSection';
 import Navbar from '../../Components/Navbar/Navbar';
@@ -17,7 +18,8 @@ const Home = () => {
         </div>
       </div>
       <LayOut>
-        {/* <Hotels /> */}
+        <Featured />
+       
       </LayOut>
     </div>
   );
