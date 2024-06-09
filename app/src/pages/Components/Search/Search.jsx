@@ -31,9 +31,9 @@ const Search = () => {
     });
   };
   return (
-    <div className="relative">
-      <div className=" w-4/6 md:w-5/6 h-fit mx-auto bg-[#494545] p-4 px-10 rounded-md text-white  absolute right-0 left-0 -bottom-80 md:-bottom-55 ">
-        <h1 className="mb-3 font-semibold ">Book your vacation </h1>
+    <div className=" ">
+      <div className=" w-5/6 md:w-5/6 h-fit mx-auto 	  rounded-md    absolute right-0 left-0 -bottom-80 md:-bottom-65 py-8 px-4 md:px-14  bg-[#E5E4CC]">
+        <h1 className="mb-3 font-semibold text-2xl">Book your vacation </h1>
         <div className="flex flex-wrap lg:flex-nowrap w-fit md:w-full mx-auto justify-between items-center gap-3 lg:gap-0">
           <div className="flex justify-between items-center border border-[#979797] rounded-l-lg p-2 gap-2 w-full">
             <div>
@@ -43,20 +43,17 @@ const Search = () => {
               <input
                 type="text"
                 placeholder="Where are you going?"
-                className="border-none outline-none rounded-md px-2 placeholder-[#f8f7f7] bg-[#979797] text-white"
+                className="border-none outline-none rounded-md px-2 placeholder-[#f8f7f7] bg-[#a19d9d]  "
               />
             </div>
           </div>
-          <div
-            className="w-full flex justify-between items-center border border-[#979797] p-2 gap-2"
-            onClick={() => setOpenDate(!openDate)}
-          >
+          <div className=" w-full flex justify-between items-center border border-[#979797] p-2 gap-2  ">
             <div>
               <SlCalender />
             </div>
-            <div className="relative">
-              <span className="text-[#D3D3D3] text-sm">
-                <span>
+            <div className="relative ">
+              <span className="text-[#a19d9d] text-sm">
+                <span onClick={() => setOpenDate(!openDate)}>
                   {`${moment(date[0]?.startDate).format('MM/DD/YYYY')}`} to{' '}
                   {`${moment(date[0]?.endDate).format('MM/DD/YYYY')}`}
                 </span>
@@ -67,26 +64,26 @@ const Search = () => {
                   onChange={(item) => setDate([item.selection])}
                   moveRangeOnFirstSelection={false}
                   ranges={date}
-                  className="absolute top-8  right-0  "
+                  className="absolute top-8  right-0 "
                 />
               )}
             </div>
           </div>
-          <div className="relative w-full flex  justify-evenly items-center border border-[#979797] p-2  gap-2 rounded-r-lg ">
+          <div className="relative w-full flex  justify-between items-center border border-[#979797] p-2  gap-2 rounded-r-lg ">
             <div>
               <IoMdPerson />
             </div>
-            <div>
+            <div className="">
               <span
-                className="text-[#D3D3D3] text-sm"
+                className="text-[#a19d9d] text-sm "
                 onClick={() => setOpenGuest(!openGuest)}
               >
-                {option?.adult} adult {option?.children} Children {option?.room}{' '}
+                {option?.adult} adult {option?.children} Children {option?.room}
                 room
               </span>
             </div>
             {openGuest && (
-              <div className="absolute top-11 right-0  bg-[#494545] p-6  text-sm ">
+              <div className="absolute top-11 right-0  bg-[#494545] p-6  text-sm z-10">
                 <div className="flex justify-between items-center gap-4 mb-2">
                   <span>Adult</span>
                   <div className="flex justify-between items-center gap-2">

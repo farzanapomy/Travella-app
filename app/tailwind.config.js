@@ -50,7 +50,8 @@ export default {
     },
     screens: {
       '2xsm': '375px',
-      xsm: '425px',
+      xsm: '400px',
+      ssm: '550px',
       '3xl': '2000px',
       ...defaultTheme.screens,
     },
