@@ -11,7 +11,7 @@ const Home = () => {
         className="bg-[url('./assets/bg-hero.jpg')] h-[650px] object-fill   bg-auto bg-center bg-no-repeat opacity-90 bg-blend-multiply	 "
         style={{ objectFit: 'cover' }}
       >
-        <div className="max-w-[1224px] mx-auto ">
+        <div className="max-w-[1224px] mx-auto relative">
           <Navbar />
           <HeroSection />
           <Search />
