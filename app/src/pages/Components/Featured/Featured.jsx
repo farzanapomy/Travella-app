@@ -3,7 +3,7 @@ import feature2 from '../../../assets/feature2.jpeg';
 import feature3 from '../../../assets/feature3.jpg';
 const Featured = () => {
   return (
-    <div className="mt-60 2xsm:mt-20 xsm:mt-40 ssm:mt-9">
+    <div className="mt-60 2xsm:mt-20 xsm:mt-40 ssm:mt-9 -z-1">
       <h1 className="font-bold text-4xl  text-center mb-7">Our Featured </h1>
       <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-10 w-full mx-auto    -z-1 ">
         <div className="relative   ">
