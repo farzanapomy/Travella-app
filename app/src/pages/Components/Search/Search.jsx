@@ -32,7 +32,7 @@ const Search = () => {
   };
   return (
     <div className="">
-      <div className=" w-5/6 md:w-5/6 h-fit mx-auto 	  rounded-md    absolute right-0 left-0 -bottom-80 md:-bottom-65 py-8 px-4 md:px-14  bg-[#e5e4cccc] ">
+      <div className=" w-5/6 lg:w-full h-fit mx-auto rounded-md absolute right-0 left-0 -bottom-80 md:-bottom-65 py-8 px-4 md:px-14 bg-[#3A5357] text-white">
         <h1 className="mb-3 font-semibold text-2xl">Book your vacation </h1>
         <div className="flex flex-wrap lg:flex-nowrap w-fit md:w-full mx-auto justify-between items-center gap-3 lg:gap-0">
           <div className="flex justify-between items-center border border-[#979797] rounded-l-lg p-2 gap-2 w-full">
@@ -52,7 +52,7 @@ const Search = () => {
               <SlCalender />
             </div>
             <div className="relative ">
-              <span className="text-[#4e4a4a] text-sm">
+              <span className="text-[#f5eeee] text-sm">
                 <span onClick={() => setOpenDate(!openDate)}>
                   {`${moment(date[0]?.startDate).format('MM/DD/YYYY')}`} to{' '}
                   {`${moment(date[0]?.endDate).format('MM/DD/YYYY')}`}
@@ -77,7 +77,7 @@ const Search = () => {
             </div>
             <div className="">
               <span
-                className="text-[#4e4a4a] text-sm "
+                className="text-[#f5eeee] text-sm "
                 onClick={() => setOpenGuest(!openGuest)}
               >
                 {option?.adult} adult {option?.children} Children {option?.room}

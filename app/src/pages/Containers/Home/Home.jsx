@@ -1,3 +1,4 @@
+import BrowseHotel from '../../Components/BrowseHotel/BrowseHotel';
 import Featured from '../../Components/Featured/Featured';
 import LayOut from '../../Components/LayOut/LayOut';
 import HeroSection from '../../Components/Navbar/HeroSection/HeroSection';
@@ -19,7 +20,7 @@ const Home = () => {
       </div>
       <LayOut>
         <Featured />
-       
+        <BrowseHotel />
       </LayOut>
     </div>
   );
