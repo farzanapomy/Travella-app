@@ -6,12 +6,12 @@ import cottage from '../../../assets/cottage.jpg';
 
 const BrowseHotel = () => {
   return (
-    <div className="w-full mx-auto my-2">
+    <div className="mt-80 2xsm:mt-60 xsm:mt-30 ssm:mt-9 sm:mt-20 -z-1 w-full">
       <h1 className="font-bold text-4xl  text-start mb-7">
         Browse By Different Types of Hotels
       </h1>
-      <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-5 w-full mx-auto">
-        <div className="cursor-pointer  flex-1">
+      <div className="grid grid-cols-2 md:grid-cols-5 items-center gap-5 w-full mx-auto">
+        <div className="cursor-pointer flex-1">
           <img
             src={hotel1}
             alt=""
@@ -20,7 +20,7 @@ const BrowseHotel = () => {
           <h1 className="text-xl font-semibold">Hotel</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
         </div>
-        <div className="cursor-pointer  flex-1">
+        <div className="cursor-pointer flex-1">
           <img
             src={cottage}
             alt=""
@@ -29,7 +29,7 @@ const BrowseHotel = () => {
           <h1 className="text-xl font-semibold">Cottage</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
         </div>
-        <div className="cursor-pointer  flex-1">
+        <div className="cursor-pointer flex-1">
           <img
             src={hotel2}
             alt=""
@@ -38,7 +38,7 @@ const BrowseHotel = () => {
           <h1 className="text-xl font-semibold">Apartment</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
         </div>
-        <div className="cursor-pointer  flex-1">
+        <div className="cursor-pointer flex-1">
           <img
             src={hotel3}
             alt=""
@@ -47,7 +47,7 @@ const BrowseHotel = () => {
           <h1 className="text-xl font-semibold">Resort</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
         </div>
-        <div className="cursor-pointer  flex-1">
+        <div className="cursor-pointer flex-1">
           <img
             src={hotel4}
             alt=""
