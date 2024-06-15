@@ -6,8 +6,8 @@ const Featured = () => {
     <div className="mt-60 2xsm:mt-20 xsm:mt-40 ssm:mt-9 sm:mt-10 -z-1 w-full">
       <h1 className="font-bold text-4xl  text-center mb-7">Our Features </h1>
       <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-5 w-full mx-auto    -z-1 ">
-        <div className="relative   ">
-          <div className=" bg-gradient-to-r from-indigo-500">
+        <div className="cursor-pointer relative  ">
+          <div className=" ">
             <img
               src={feature1}
               alt=""
@@ -19,8 +19,8 @@ const Featured = () => {
             <h2 className="text-title-md">102 properties</h2>
           </div>
         </div>
-        <div className="relative   ">
-          <div className=" bg-gradient-to-r from-indigo-500">
+        <div className="cursor-pointer relative  ">
+          <div className=" ">
             <img
               src={feature2}
               alt=""
@@ -32,8 +32,8 @@ const Featured = () => {
             <h2 className="text-title-md">102 properties</h2>
           </div>
         </div>
-        <div className="relative   ">
-          <div className=" bg-gradient-to-r from-indigo-500">
+        <div className="cursor-pointer relative  ">
+          <div className=" ">
             <img
               src={feature3}
               alt=""
@@ -45,8 +45,8 @@ const Featured = () => {
             <h2 className="text-title-md">102 properties</h2>
           </div>
         </div>
-        <div className="relative   ">
-          <div className=" bg-gradient-to-r from-indigo-500">
+        <div className="cursor-pointer relative  ">
+          <div className=" ">
             <img
               src={feature1}
               alt=""
