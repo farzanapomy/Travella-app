@@ -21,8 +21,8 @@ const Recommended = () => {
             <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
-          <div className="flex mt-2 justify-between  items-center">
-            <button className=" text-white  bg-[#3A5357] p-1.5 rounded">4.2</button>
+          <div className="flex mt-2 justify-start items-center gap-3">
+            <button className=" text-white  bg-[#3A5357] p-1 rounded">4.2</button>
             <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
@@ -37,8 +37,8 @@ const Recommended = () => {
             <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
-          <div className="flex mt-2 justify-between  items-center">
-            <button className=" text-white  bg-[#3A5357] p-1.5 rounded">4.2</button>
+          <div className="flex mt-2 justify-start items-center gap-3">
+            <button className=" text-white  bg-[#3A5357] p-1 rounded">4.2</button>
             <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
@@ -53,8 +53,8 @@ const Recommended = () => {
             <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
-          <div className="flex mt-2 justify-between  items-center">
-            <button className=" text-white  bg-[#3A5357] p-1.5 rounded">4.2</button>
+          <div className="flex mt-2 justify-start items-center gap-3">
+            <button className=" text-white  bg-[#3A5357] p-1 rounded">4.2</button>
             <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
@@ -69,8 +69,8 @@ const Recommended = () => {
             <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
-          <div className="flex mt-2 justify-between  items-center">
-            <button className=" text-white  bg-[#3A5357] p-1.5 rounded">4.2</button>
+          <div className="flex mt-2 justify-start items-center gap-3">
+            <button className=" text-white  bg-[#3A5357] p-1 rounded">4.2</button>
             <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
