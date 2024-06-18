@@ -7,51 +7,51 @@ import cottage from '../../../assets/cottage.jpg';
 const BrowseHotel = () => {
   return (
     <div className="w-full mx-auto my-2">
-      <h1 className="font-bold text-4xl  text-center mb-7">
-        Different Types of Hotels
+      <h1 className="font-bold text-4xl  text-start mb-7">
+        Browse By Different Types of Hotels
       </h1>
       <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-5 w-full mx-auto">
-        <div className="cursor-pointer relative">
+        <div className="cursor-pointer  flex-1">
           <img
             src={hotel1}
             alt=""
-            className="rounded-md h-50 w-50 object-cover "
+            className="rounded-md  h-40 object-cover w-full "
           />
           <h1 className="text-xl font-semibold">Hotel</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
         </div>
-        <div className="cursor-pointer relative">
+        <div className="cursor-pointer  flex-1">
           <img
             src={cottage}
             alt=""
-            className="rounded-md h-50 w-50 object-cover "
+            className="rounded-md  h-40 object-cover w-full "
           />
           <h1 className="text-xl font-semibold">Cottage</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
         </div>
-        <div className="cursor-pointer relative">
+        <div className="cursor-pointer  flex-1">
           <img
             src={hotel2}
             alt=""
-            className="rounded-md h-50 w-50 object-cover "
+            className="rounded-md  h-40 object-cover w-full "
           />
           <h1 className="text-xl font-semibold">Apartment</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
         </div>
-        <div className="cursor-pointer relative">
+        <div className="cursor-pointer  flex-1">
           <img
             src={hotel3}
             alt=""
-            className="rounded-md h-50 w-50 object-cover "
+            className="rounded-md  h-40 object-cover w-full "
           />
           <h1 className="text-xl font-semibold">Resort</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
         </div>
-        <div className="cursor-pointer relative">
+        <div className="cursor-pointer  flex-1">
           <img
             src={hotel4}
             alt=""
-            className="rounded-md h-50 w-50 object-cover "
+            className="rounded-md  h-40 object-cover w-full "
           />
           <h1 className="text-xl font-semibold">Cabins</h1>
           <h2 className="text-sm">1,5000 Hotels</h2>
