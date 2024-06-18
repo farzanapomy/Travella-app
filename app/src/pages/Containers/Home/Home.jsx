@@ -3,6 +3,7 @@ import Featured from '../../Components/Featured/Featured';
 import LayOut from '../../Components/LayOut/LayOut';
 import HeroSection from '../../Components/Navbar/HeroSection/HeroSection';
 import Navbar from '../../Components/Navbar/Navbar';
+import Recommended from '../../Components/Recommended/Recommended';
 import Search from '../../Components/Search/Search';
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
       <LayOut>
         <Featured />
         <BrowseHotel />
+        <Recommended/>
       </LayOut>
     </div>
   );
