@@ -11,45 +11,67 @@ const Recommended = () => {
       </h1>
       <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-5 w-full mx-auto">
         <div>
-          <img src={rating1} alt="" />
-          <p className=" font-semibold text-xl">Hotel of Dubai</p>
+          <img
+            src={rating1}
+            alt=""
+            className="rounded-md h-60 object-cover w-full "
+          />
+          <p className=" font-bold text-2xl">Hotel of Dubai</p>
           <div className="flex mt-2 justify-between gap-10">
-            <p>Dubai</p>
+            <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
+          <div className="flex mt-2 justify-between  items-center">
+            <button className=" text-white  bg-[#3A5357] p-1.5 rounded">4.2</button>
+            <span className="text-title-md text-[#3A5357]">Excellent</span>
+          </div>
+        </div>
+        <div>
+          <img
+            src={rating2}
+            alt=""
+            className="rounded-md h-60 object-cover w-full "
+          />
+          <p className=" font-bold text-2xl">Hotel of Dubai</p>
           <div className="flex mt-2 justify-between gap-10">
-            <button>4.2</button>
-            <span>Excellent</span>
+            <p className="font-medium text-xl">Dubai</p>
+            <p className=" font-semibold text-xl ">$1500</p>
+          </div>
+          <div className="flex mt-2 justify-between  items-center">
+            <button className=" text-white  bg-[#3A5357] p-1.5 rounded">4.2</button>
+            <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
         <div>
-          <img src={rating2} alt="" />
-          <span>Hotel of Dubai</span>
-          <span>Dubai</span>
-          <span>$1500</span>
-          <div>
-            <button>4.2</button>
-            <span>Excellent</span>
+          <img
+            src={rating3}
+            alt=""
+            className="rounded-md h-60 object-cover w-full "
+          />
+          <p className=" font-bold text-2xl">Hotel of Dubai</p>
+          <div className="flex mt-2 justify-between gap-10">
+            <p className="font-medium text-xl">Dubai</p>
+            <p className=" font-semibold text-xl ">$1500</p>
+          </div>
+          <div className="flex mt-2 justify-between  items-center">
+            <button className=" text-white  bg-[#3A5357] p-1.5 rounded">4.2</button>
+            <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
         <div>
-          <img src={rating3} alt="" />
-          <span>Hotel of Dubai</span>
-          <span>Dubai</span>
-          <span>$1500</span>
-          <div>
-            <button>4.2</button>
-            <span>Excellent</span>
+          <img
+            src={rating4}
+            alt=""
+            className="rounded-md h-60 object-cover w-full "
+          />
+          <p className=" font-bold text-2xl">Hotel of Dubai</p>
+          <div className="flex mt-2 justify-between gap-10">
+            <p className="font-medium text-xl">Dubai</p>
+            <p className=" font-semibold text-xl ">$1500</p>
           </div>
-        </div>
-        <div>
-          <img src={rating4} alt="" />
-          <span>Hotel of Dubai</span>
-          <span>Dubai</span>
-          <span>$1500</span>
-          <div>
-            <button>4.2</button>
-            <span>Excellent</span>
+          <div className="flex mt-2 justify-between  items-center">
+            <button className=" text-white  bg-[#3A5357] p-1.5 rounded">4.2</button>
+            <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
       </div>
