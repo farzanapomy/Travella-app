@@ -2,6 +2,7 @@ import rating1 from '../../../assets/rating1.jpg';
 import rating2 from '../../../assets/rating2.jpg';
 import rating3 from '../../../assets/rating3.jpg';
 import rating4 from '../../../assets/rating4.jpg';
+import { CiStar } from 'react-icons/ci';
 
 const Recommended = () => {
   return (
@@ -10,7 +11,7 @@ const Recommended = () => {
         Recommended By Client
       </h1>
       <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-5 w-full mx-auto">
-        <div className='cursor-pointer'>
+        <div className="cursor-pointer">
           <img
             src={rating1}
             alt=""
@@ -21,12 +22,23 @@ const Recommended = () => {
             <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
-          <div className="flex mt-2 justify-start items-center gap-3">
-            <button className=" text-white  bg-[#3A5357] p-1 rounded">4.2</button>
+          <div className="flex mt-2 justify-between items-center gap-3">
+            <div className="flex gap-2 justify-start items-center">
+              <button className=" text-white  bg-[#3A5357] p-1 rounded">
+                4.2
+              </button>
+              <div className="flex justify-start items-center">
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+              </div>
+            </div>
             <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
-        <div className='cursor-pointer'>
+        <div className="cursor-pointer">
           <img
             src={rating2}
             alt=""
@@ -37,12 +49,23 @@ const Recommended = () => {
             <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
-          <div className="flex mt-2 justify-start items-center gap-3">
-            <button className=" text-white  bg-[#3A5357] p-1 rounded">4.2</button>
+          <div className="flex mt-2 justify-between items-center gap-3">
+            <div className="flex gap-2 justify-start items-center">
+              <button className=" text-white  bg-[#3A5357] p-1 rounded">
+                4.2
+              </button>
+              <div className="flex justify-start items-center">
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+              </div>
+            </div>
             <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
-        <div className='cursor-pointer'>
+        <div className="cursor-pointer">
           <img
             src={rating3}
             alt=""
@@ -53,12 +76,23 @@ const Recommended = () => {
             <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
-          <div className="flex mt-2 justify-start items-center gap-3">
-            <button className=" text-white  bg-[#3A5357] p-1 rounded">4.2</button>
+          <div className="flex mt-2 justify-between items-center gap-3">
+            <div className="flex gap-2 justify-start items-center">
+              <button className=" text-white  bg-[#3A5357] p-1 rounded">
+                4.2
+              </button>
+              <div className="flex justify-start items-center">
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+              </div>
+            </div>
             <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
-        <div className='cursor-pointer'>
+        <div className="cursor-pointer">
           <img
             src={rating4}
             alt=""
@@ -69,8 +103,19 @@ const Recommended = () => {
             <p className="font-medium text-xl">Dubai</p>
             <p className=" font-semibold text-xl ">$1500</p>
           </div>
-          <div className="flex mt-2 justify-start items-center gap-3">
-            <button className=" text-white  bg-[#3A5357] p-1 rounded">4.2</button>
+          <div className="flex mt-2 justify-between items-center gap-3">
+            <div className="flex gap-2 justify-start items-center">
+              <button className=" text-white  bg-[#3A5357] p-1 rounded">
+                4.2
+              </button>
+              <div className="flex justify-start items-center">
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+              </div>
+            </div>
             <span className="text-title-md text-[#3A5357]">Excellent</span>
           </div>
         </div>
