@@ -43,7 +43,7 @@ const Search = () => {
               <input
                 type="text"
                 placeholder="Where are you going?"
-                className="border-none outline-none rounded-md px-2 placeholder-[#f8f7f7] bg-[#a19d9d]  "
+                className="border-none outline-none rounded-md  w-full p-1.5  "
               />
             </div>
           </div>
@@ -51,8 +51,8 @@ const Search = () => {
             <div>
               <SlCalender />
             </div>
-            <div className="relative ">
-              <span className="text-[#f5eeee] text-sm">
+            <div className="relative py-1.5">
+              <span className="text-[#f5eeee] text-sm ">
                 <span onClick={() => setOpenDate(!openDate)}>
                   {`${moment(date[0]?.startDate).format('MM/DD/YYYY')}`} to{' '}
                   {`${moment(date[0]?.endDate).format('MM/DD/YYYY')}`}
@@ -71,7 +71,7 @@ const Search = () => {
               </div>
             </div>
           </div>
-          <div className="relative w-full flex  justify-between items-center border border-[#979797] p-2  gap-2 rounded-r-lg ">
+          <div className="relative w-full flex  justify-between items-center border border-[#979797] p-3.5  gap-2 rounded-r-lg  ">
             <div>
               <IoMdPerson />
             </div>
@@ -151,7 +151,7 @@ const Search = () => {
             )}
           </div>
           <div>
-            <button className="bg-[#91CB82] py-2 px-9 rounded-md md:mx-3  ">
+            <button className="bg-[#91CB82] py-2.5 px-9 rounded-md md:mx-3  ">
               Search
             </button>
           </div>
