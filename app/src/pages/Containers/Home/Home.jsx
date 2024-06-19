@@ -5,6 +5,7 @@ import HeroSection from '../../Components/Navbar/HeroSection/HeroSection';
 import Navbar from '../../Components/Navbar/Navbar';
 import Recommended from '../../Components/Recommended/Recommended';
 import Search from '../../Components/Search/Search';
+import Subscribe from '../../Components/Subscribe/Subscribe';
 
 const Home = () => {
   return (
@@ -22,7 +23,8 @@ const Home = () => {
       <LayOut>
         <BrowseHotel />
         <Featured />
-        <Recommended/>
+        <Recommended />
+        <Subscribe />
       </LayOut>
     </div>
   );
