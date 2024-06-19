@@ -20,8 +20,8 @@ const Home = () => {
         </div>
       </div>
       <LayOut>
-        <Featured />
         <BrowseHotel />
+        <Featured />
         <Recommended/>
       </LayOut>
     </div>
