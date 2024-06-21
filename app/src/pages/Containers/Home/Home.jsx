@@ -1,7 +1,6 @@
 import BrowseHotel from '../../Components/BrowseHotel/BrowseHotel';
 import Featured from '../../Components/Featured/Featured';
 import Footer from '../../Components/Footer/Footer';
-import LayOut from '../../Components/LayOut/LayOut';
 import HeroSection from '../../Components/Navbar/HeroSection/HeroSection';
 import Navbar from '../../Components/Navbar/Navbar';
 import Recommended from '../../Components/Recommended/Recommended';
@@ -21,14 +20,11 @@ const Home = () => {
           <Search />
         </div>
       </div>
-      <LayOut>
         <BrowseHotel />
         <Featured />
         <Recommended />
         <Subscribe />
         <Footer />
-        <p>Company All Right Reserved , 2024</p>
-      </LayOut>
     </div>
   );
 };
