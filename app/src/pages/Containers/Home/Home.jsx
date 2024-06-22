@@ -1,5 +1,6 @@
 import BrowseHotel from '../../Components/BrowseHotel/BrowseHotel';
 import Featured from '../../Components/Featured/Featured';
+import Footer from '../../Components/Footer/Footer';
 import LayOut from '../../Components/LayOut/LayOut';
 import HeroSection from '../../Components/Navbar/HeroSection/HeroSection';
 import Navbar from '../../Components/Navbar/Navbar';
@@ -25,6 +26,8 @@ const Home = () => {
         <Featured />
         <Recommended />
         <Subscribe />
+        <Footer />
+        <p>Company All Right Reserved , 2024</p>
       </LayOut>
     </div>
   );
