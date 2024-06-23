@@ -3,7 +3,7 @@ import Logo from '../Logo/Logo';
 
 const Footer = () => {
   return (
-    <div className="w-full mx-auto bg-[#BBC9B8]  px-5 py-8 h-full">
+    <div className="w-full mx-auto bg-[#BBC9B8]  px-5 py-8 h-full ">
       <LayOut>
          
         <Logo className="cursor-pointer" />
