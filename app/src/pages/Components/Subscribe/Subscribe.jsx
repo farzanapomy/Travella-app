@@ -1,6 +1,6 @@
 const Subscribe = () => {
   return (
-    <div className="bg-[#3A5357] w-full mx-auto flex justify-center items-center p-10 text-white rounded-md mt-10">
+    <div className="bg-[#3A5357] w-full mx-auto flex justify-center items-center p-10 text-white rounded-md mt-50">
       <div className=" text-center">
         <h1 className="text-4xl font-bold mb-3">Get in Touch !</h1>
         <span>Sign Up for get more update and save your money and time</span>
