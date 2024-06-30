@@ -69,7 +69,8 @@ const Search = () => {
                     onChange={(item) => setDate([item.selection])}
                     moveRangeOnFirstSelection={false}
                     ranges={date}
-                    className="absolute bg-[#e5e4cc]  top-8  right-0 "
+                    minDate={new Date()}
+                    className="absolute bg-black  top-8  right-0 "
                   />
                 )}
               </div>
