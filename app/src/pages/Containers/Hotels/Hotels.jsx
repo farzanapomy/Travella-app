@@ -23,15 +23,15 @@ const Hotels = () => {
               <SingleHotel />
             </div>
             <div className=" py-10 ">
-              <div className="flex flex-col bg-[#EDEDED] p-3">
+              <div className="flex px-5 flex-col bg-[#EDEDED] p-3 rounded-md">
                 <h1 className="font-bold text-3xl">Search</h1>
-                <span className="text-xl font-semibold my-3">Destination</span>
+                <span className="mt-5">Destination</span>
                 <input
                   type="text"
                   defaultValue={destination}
                   className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
                 />
-                <span className="text-xl font-semibold my-3">Check in </span>
+                <span className="">Check in </span>
                 <div className="relative py-1.5 w-full  p-1.5 border border-[#BCD7D3]">
                   <span className="  outline-none rounded-md ">
                     <span onClick={() => setOpenDate(!openDate)}>
@@ -50,6 +50,55 @@ const Hotels = () => {
                         className="absolute   top-8  right-0 "
                       />
                     )}
+                  </div>
+                </div>
+                <div className="my-2">
+                  <div className="flex flex-col">
+                    <span>
+                      Min Price <small>Per Night</small>
+                    </span>
+                    <input
+                      type="number"
+                      min={0}
+                      className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
+                    />
+                  </div>
+                  <div>
+                    <span>
+                      Max Price <small>Per Night</small>
+                    </span>
+                    <input
+                      type="number"
+                      min={0}
+                      className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
+                    />
+                  </div>
+                  <div>
+                    <span>Adult</span>
+                    <input
+                      type="number"
+                      className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
+                      placeholder={option.adult}
+                      min={1}
+                    />
+                  </div>
+                  <div>
+                    <span>Children </span>
+                    <input
+                      type="number"
+                      className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
+                      placeholder={option.children}
+                      min={0}
+                    />
+                  </div>
+                  <div>
+                    <span>Room </span>
+                    <input
+                      type="number"
+                      className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
+                      placeholder={option.room}
+                      min={1}
+                    />
                   </div>
                 </div>
               </div>
