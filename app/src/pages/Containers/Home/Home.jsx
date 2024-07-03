@@ -10,21 +10,18 @@ import Subscribe from '../../Components/Subscribe/Subscribe';
 const Home = () => {
   return (
     <div>
-      <div
-        className="bg-[url('./assets/bg-hero.jpg')] h-[650px] object-fill   bg-auto bg-center bg-no-repeat opacity-90 bg-blend-multiply	 "
-        style={{ objectFit: 'cover' }}
-      >
+      <div className="bg-[url('./assets/bg-hero.jpg')] h-[650px] object-fill bg-auto bg-center bg-no-repeat opacity-90 bg-blend-multiply">
         <div className="max-w-[1224px] mx-auto relative">
           <Navbar />
           <HeroSection />
           <Search />
         </div>
       </div>
-        <BrowseHotel />
-        <Featured />
-        <Recommended />
-        <Subscribe />
-        <Footer />
+      <BrowseHotel />
+      <Featured />
+      <Recommended />
+      <Subscribe />
+      <Footer />
     </div>
   );
 };
