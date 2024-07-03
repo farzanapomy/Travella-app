@@ -7,8 +7,11 @@ import { FaBed } from 'react-icons/fa';
 import { IoMdPerson } from 'react-icons/io';
 import { SlCalender } from 'react-icons/sl';
 import './search.css';
+import { useNavigate } from 'react-router-dom';
 const Search = () => {
+  const navigate = useNavigate();
   const [openDate, setOpenDate] = useState(false);
+  const [destination, setDestination] = useState('');
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -44,6 +47,7 @@ const Search = () => {
                 type="text"
                 placeholder="Where are you going?"
                 className="border-none outline-none rounded-md  w-full p-1.5  "
+                onChange={(e) => setDestination(e.target.value)}
               />
             </div>
           </div>
@@ -151,7 +155,14 @@ const Search = () => {
             )}
           </div>
           <div>
-            <button className="bg-[#91CB82] py-2.5 px-9 rounded-md md:mx-3  ">
+            <button
+              className="bg-[#91CB82] py-2.5 px-9 rounded-md md:mx-3 "
+              onClick={() =>
+                navigate('/hotels', {
+                  state: { destination, option, date },
+                })
+              }
+            >
               Search
             </button>
           </div>
