@@ -8,12 +8,12 @@ import LayOut from '../LayOut/LayOut';
 const Recommended = () => {
   return (
     <LayOut>
-      <div className="w-full mx-auto my-2">
+      <div className="w-full mx-auto my-2 ">
         <h1 className="font-bold text-4xl  text-start mb-7">
           Recommended By Client
         </h1>
         <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-5 w-full mx-auto">
-          <div className="cursor-pointer">
+          <div className="cursor-pointer border border-[#D3D3D3] p-3">
             <img
               src={rating1}
               alt=""
@@ -40,7 +40,7 @@ const Recommended = () => {
               <span className="text-title-md text-[#3A5357]">Excellent</span>
             </div>
           </div>
-          <div className="cursor-pointer">
+          <div className="cursor-pointer border border-[#D3D3D3] p-3">
             <img
               src={rating2}
               alt=""
@@ -67,7 +67,7 @@ const Recommended = () => {
               <span className="text-title-md text-[#3A5357]">Excellent</span>
             </div>
           </div>
-          <div className="cursor-pointer">
+          <div className="cursor-pointer border border-[#D3D3D3] p-3">
             <img
               src={rating3}
               alt=""
@@ -94,7 +94,7 @@ const Recommended = () => {
               <span className="text-title-md text-[#3A5357]">Excellent</span>
             </div>
           </div>
-          <div className="cursor-pointer">
+          <div className="cursor-pointer border border-[#D3D3D3] p-3">
             <img
               src={rating4}
               alt=""
