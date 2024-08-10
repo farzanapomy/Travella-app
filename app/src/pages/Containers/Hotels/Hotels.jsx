@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import SearchHotels from '../../Components/SearchHotels/SearchHotels';
+import plane from '../../../assets/plane.svg';
 const Hotels = () => {
   const location = useLocation();
   console.log(location);
@@ -14,15 +15,22 @@ const Hotels = () => {
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState(location?.state?.date);
   return (
-    <div>
+    <div className="">
       <div className=" h-fit object-fill  bg-no-repeat opacity-90  bg-blend-multiply">
         <div className="max-w-[1224px] mx-auto ">
           <Navbar />
-          <div className="grid grid-cols-3 gap-5">
-            <div className="py-10 col-span-2">
-              <SearchHotels/>
+          <div className="flex justify-center items-center px-2">
+            <h1 className="font-bold text-3xl">Searched Hotels</h1>
+            <div>
+              <img
+                src={plane}
+                alt=""
+                className="rounded-md h-70  object-cover w-full"
+              />
             </div>
-            <div className=" py-10 ">
+          </div>
+          <div className="grid md:grid-cols-3 gap-5 ">
+            <div className=" py-10 px-8 w-full mx-auto">
               <div className="flex px-5 flex-col bg-[#EDEDED] p-3 rounded-md">
                 <h1 className="font-bold text-3xl">Search</h1>
                 <span className="mt-5">Destination</span>
@@ -35,7 +43,7 @@ const Hotels = () => {
                 <div className="relative py-1.5 w-full  p-1.5 border border-[#BCD7D3]">
                   <span className="  outline-none rounded-md ">
                     <span onClick={() => setOpenDate(!openDate)}>
-                    {`${moment(date[0]?.startDate).format('MM/DD/YYYY')}`} to{' '}
+                      {`${moment(date[0]?.startDate).format('MM/DD/YYYY')}`} to{' '}
                       {`${moment(date[0]?.endDate).format('MM/DD/YYYY')}`}
                     </span>
                   </span>
@@ -99,9 +107,16 @@ const Hotels = () => {
                       placeholder={option?.room}
                       min={1}
                     />
-                  </div>
+                  </div>{' '}
                 </div>
               </div>
+            </div>
+            <div className="py-10 col-span-2 grid grid-cols-1  md:grid-cols-3 gap-3">
+              <SearchHotels />
+              <SearchHotels />
+              <SearchHotels />
+              <SearchHotels />
+              <SearchHotels />
             </div>
           </div>
         </div>
