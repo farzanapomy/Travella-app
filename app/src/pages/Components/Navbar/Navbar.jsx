@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   console.log(window.location.href);
   return (
-    <div className={`w-full border-opacity-40 mx-auto`}>
+    <div
+      className={`w-full border-opacity-40 mx-auto  `}
+    >
       <div className="">
         <div className="flex justify-between items-center">
           <div className="mx-4 mt-10 mb-6">
