@@ -19,18 +19,13 @@ const Hotels = () => {
       <div className=" h-fit object-fill  bg-no-repeat opacity-90  bg-blend-multiply">
         <div className="max-w-[1224px] mx-auto ">
           <Navbar />
-          <div className="flex justify-center items-center px-2">
-            <h1 className="font-bold text-3xl">Searched Hotels</h1>
-            <div>
-              <img
-                src={plane}
-                alt=""
-                className="rounded-md h-70  object-cover w-full"
-              />
-            </div>
+          <div className="w-full ">
+            <h1 className="font-bold text-white text-3xl bg-[#3A5357] px-2 py-6 rounded-md">
+              Searched Hotels
+            </h1>
           </div>
           <div className="grid md:grid-cols-3 gap-5 ">
-            <div className=" py-10 px-8 w-full mx-auto">
+            <div className=" py-10 px-2 w-full mx-auto">
               <div className="flex px-5 flex-col bg-[#EDEDED] p-3 rounded-md">
                 <h1 className="font-bold text-3xl">Search</h1>
                 <span className="mt-5">Destination</span>
@@ -40,7 +35,7 @@ const Hotels = () => {
                   className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
                 />
                 <span className="">Check in </span>
-                <div className="relative py-1.5 w-full  p-1.5 border border-[#BCD7D3]">
+                <div className="relative py-1.5 w-full  p-1.5 border bg-white border-[#BCD7D3]">
                   <span className="  outline-none rounded-md ">
                     <span onClick={() => setOpenDate(!openDate)}>
                       {`${moment(date[0]?.startDate).format('MM/DD/YYYY')}`} to{' '}
@@ -109,6 +104,13 @@ const Hotels = () => {
                     />
                   </div>{' '}
                 </div>
+              </div>
+              <div>
+                <img
+                  src={plane}
+                  alt=""
+                  className="rounded-md h-70  object-cover w-full"
+                />
               </div>
             </div>
             <div className="py-10 col-span-2 grid grid-cols-1  md:grid-cols-3 gap-3">
