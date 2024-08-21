@@ -1,4 +1,5 @@
 import BrowseHotel from '../../Components/BrowseHotel/BrowseHotel';
+import Category from '../../Components/Category/Category';
 import Featured from '../../Components/Featured/Featured';
 import Footer from '../../Components/Footer/Footer';
 import HeroSection from '../../Components/Navbar/HeroSection/HeroSection';
@@ -17,6 +18,7 @@ const Home = () => {
           <Search />
         </div>
       </div>
+      <Category />
       <Featured />
       <BrowseHotel />
       <Recommended />
