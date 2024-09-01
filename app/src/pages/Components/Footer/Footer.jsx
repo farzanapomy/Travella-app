@@ -3,8 +3,8 @@ import Logo from '../Logo/Logo';
 
 const Footer = () => {
   return (
-    <div className="w-full mx-auto bg-[#BCD7D3]  px-5 py-8 h-full ">
-      <LayOut>
+    <LayOut>
+      <div className="w-full mx-auto bg-[#BCD7D3]  px-5 py-8 h-full ">
         <Logo className="cursor-pointer" />
         <div className="w-full mx-auto flex justify-between items-center ">
           <div>
@@ -59,8 +59,8 @@ const Footer = () => {
           </div>
         </div>
         <p>Company All Right Reserved , 2024</p>
-      </LayOut>
-    </div>
+      </div>
+    </LayOut>
   );
 };
 
