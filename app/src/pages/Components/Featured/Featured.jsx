@@ -1,8 +1,12 @@
 import feature1 from '../../../assets/feature1.jpg';
 import feature2 from '../../../assets/feature2.jpeg';
 import feature3 from '../../../assets/feature3.jpg';
+import useFetch from '../../../hooks/useFatch';
+import { GETDATABYCITY } from '../../../urls/urls';
 import LayOut from '../LayOut/LayOut';
 const Featured = () => {
+  const { data, loading, error } = useFetch(GETDATABYCITY);
+  console.log(data);
   return (
     <LayOut>
       <div className="w-full mx-auto my-2">
