@@ -67,3 +67,18 @@ export const getByCity = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getByType = async (req, res) => {
+  const types = req.query.types.split(',');
+  try {
+    const type = await Promise.all(
+      types.map((type) => {
+        return Hotel.countDocuments({ type: type });
+      })
+    );
+    console.log(type);
+    res.status(200).json(type);
+  } catch (error) {
+    next(error);
+  }
+};
