@@ -4,8 +4,12 @@ import hotel3 from '../../../assets/hotel3.jpg';
 import hotel4 from '../../../assets/hotel4.jpg';
 import cottage from '../../../assets/cottage.jpg';
 import LayOut from '../LayOut/LayOut';
+import useFetch from '../../../hooks/useFatch';
+import { GETDATABYTYPE } from '../../../urls/urls';
 
 const BrowseHotel = () => {
+  const { data, loading, error } = useFetch(GETDATABYTYPE);
+  console.log(data);
   return (
     <LayOut>
       <div className="mt-80 2xsm:mt-60 xsm:mt-30 ssm:mt-9 sm:mt-20 -z-1 w-full 	">
@@ -19,8 +23,8 @@ const BrowseHotel = () => {
               alt=""
               className="rounded-md  h-40 object-cover w-full "
             />
-            <h1 className="text-xl font-semibold">Hotel</h1>
-            <h2 className="text-sm">1,5000 Hotels</h2>
+            <h1 className="text-xl font-semibold">Hight Luxury Hotel</h1>
+            <h2 className="text-sm">{data[0]} Hotels</h2>
           </div>
           <div className="cursor-pointer flex-1 border border-[#D3D3D3] p-3 shadow-md">
             <img
@@ -29,7 +33,7 @@ const BrowseHotel = () => {
               className="rounded-md  h-40 object-cover w-full "
             />
             <h1 className="text-xl font-semibold">Cottage</h1>
-            <h2 className="text-sm">1,5000 Hotels</h2>
+            <h2 className="text-sm">{data[1]} Hotels</h2>
           </div>
           <div className="cursor-pointer flex-1 border border-[#D3D3D3] p-3 shadow-md">
             <img
@@ -38,7 +42,7 @@ const BrowseHotel = () => {
               className="rounded-md  h-40 object-cover w-full "
             />
             <h1 className="text-xl font-semibold">Apartment</h1>
-            <h2 className="text-sm">1,5000 Hotels</h2>
+            <h2 className="text-sm">{data[2]} Hotels</h2>
           </div>
           <div className="cursor-pointer flex-1 border border-[#D3D3D3] p-3 shadow-md">
             <img
@@ -47,7 +51,7 @@ const BrowseHotel = () => {
               className="rounded-md  h-40 object-cover w-full "
             />
             <h1 className="text-xl font-semibold">Resort</h1>
-            <h2 className="text-sm">1,5000 Hotels</h2>
+            <h2 className="text-sm">{data[3]} Hotels</h2>
           </div>
           <div className="cursor-pointer flex-1 border border-[#D3D3D3] p-3 shadow-md">
             <img
@@ -56,7 +60,7 @@ const BrowseHotel = () => {
               className="rounded-md  h-40 object-cover w-full "
             />
             <h1 className="text-xl font-semibold">Cabins</h1>
-            <h2 className="text-sm">1,5000 Hotels</h2>
+            <h2 className="text-sm">{data[1]} Hotels</h2>
           </div>
         </div>
       </div>
