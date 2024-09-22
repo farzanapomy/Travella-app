@@ -6,7 +6,6 @@ import { GETDATABYCITY } from '../../../urls/urls';
 import LayOut from '../LayOut/LayOut';
 const Featured = () => {
   const { data, loading, error } = useFetch(GETDATABYCITY);
-  console.log(data);
   return (
     <LayOut>
       <div className="w-full mx-auto my-2">
