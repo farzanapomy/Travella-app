@@ -4,9 +4,11 @@ import Subscribe from '../../Components/Subscribe/Subscribe';
 import img from '../../../assets/apart.jpg';
 import img2 from '../../../assets/apart1.jpg';
 import img3 from '../../../assets/apart2.jpg';
+import img4 from '../../../assets/cottage.jpg';
 import { FaLocationDot } from 'react-icons/fa6';
 
 const SingleHotel = () => {
+  
   return (
     <div className="max-w-[1224px] mx-auto">
       <Navbar />
@@ -37,52 +39,50 @@ const SingleHotel = () => {
             </button>
           </div>
         </div>
-        {/* <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 my-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 my-4">
           <div>
             <img
               src={img}
               alt=""
-              className="rounded-md h-70  object-cover w-full "
-            />
-          </div>
-          <div>
-            {' '}
-            <img
-              src={img2}
-              alt=""
-              className="rounded-md h-70  object-cover w-full "
-            />
-          </div>
-          <div>
-            <img
-              src={img3}
-              alt=""
-              className="rounded-md h-70   object-cover w-full "
-            />
-          </div>
-          <div>
-            <img
-              src={img3}
-              alt=""
-              className="rounded-md h-70  object-cover w-full "
-            />
-          </div>
-          <div>
-            {' '}
-            <img
-              src={img}
-              alt=""
-              className="rounded-md h-70  object-cover w-full "
+              className="rounded-md h-60  object-cover w-full "
             />
           </div>
           <div>
             <img
               src={img2}
               alt=""
-              className="rounded-md h-70   object-cover w-full "
+              className="rounded-md h-60  object-cover w-full "
             />
           </div>
-        </div> */}
+          <div>
+            <img
+              src={img3}
+              alt=""
+              className="rounded-md h-60   object-cover w-full "
+            />
+          </div>
+          <div>
+            <img
+              src={img}
+              alt=""
+              className="rounded-md h-60  object-cover w-full "
+            />
+          </div>
+          <div>
+            <img
+              src={img3}
+              alt=""
+              className="rounded-md h-60  object-cover w-full "
+            />
+          </div>
+          <div>
+            <img
+              src={img4}
+              alt=""
+              className="rounded-md h-60   object-cover w-full "
+            />
+          </div>
+        </div>
         <div className="mt-14">
           <div>
             <h1 className="text-3xl font-semibold mb-7">
