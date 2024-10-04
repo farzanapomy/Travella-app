@@ -3,6 +3,7 @@ import { errorFunction } from './handleError.js';
 
 export const verifyToken = async (req, res, next) => {
   const token = req?.cookies?.access_token;
+  console.log(token);
   if (!token) {
     console.log(token);
     return next(errorFunction(401, 'You are not authenticated'));
@@ -17,7 +18,7 @@ export const verifyToken = async (req, res, next) => {
 };
 // verify user
 export const verifyUser = async (req, res, next) => {
-  verifyToken(req, res, next, () => {
+  verifyToken(req, res, () => {
     if (req.user.id === req.params.id || req.user.isAdmin) {
       next();
     } else {
