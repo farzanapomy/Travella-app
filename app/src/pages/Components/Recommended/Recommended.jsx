@@ -8,10 +8,13 @@ import LayOut from '../LayOut/LayOut';
 const Recommended = () => {
   return (
     <LayOut>
-      <div className="w-full mx-auto my-2 ">
-        <h1 className="font-bold text-4xl  text-start mb-7">
-          Recommended By Client
-        </h1>
+      <div className="w-full mx-auto my-2 mt-10">
+        <div className="text-center mb-9 font-[volkhov]">
+          <h1 className="text-3xl mb-1 uppercase">Recommended</h1>
+          <h1 className="font-bold text-3xl mb-7">
+            Browse All the Recommended Hotels By Client{' '}
+          </h1>
+        </div>
         <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-5 w-full mx-auto">
           <div className="cursor-pointer border border-[#D3D3D3] p-3 shadow-md">
             <img
@@ -19,9 +22,9 @@ const Recommended = () => {
               alt=""
               className="rounded-md h-60 object-cover w-full "
             />
-            <p className=" font-bold text-2xl">Hotel of Dubai</p>
+            <p className=" font-semibold text-2xl">Hotel of Dubai</p>
             <div className="flex mt-2 justify-between gap-10">
-              <p className="font-medium text-xl">Dubai</p>
+              <p className=" ">Dubai</p>
               <p className=" font-semibold text-xl ">$1500</p>
             </div>
             <div className="flex mt-2 justify-between items-center gap-3">
@@ -46,9 +49,9 @@ const Recommended = () => {
               alt=""
               className="rounded-md h-60 object-cover w-full "
             />
-            <p className=" font-bold text-2xl">Hotel of Dubai</p>
+            <p className=" font-semibold text-2xl">Hotel of Dubai</p>
             <div className="flex mt-2 justify-between gap-10">
-              <p className="font-medium text-xl">Dubai</p>
+              <p className=" ">Dubai</p>
               <p className=" font-semibold text-xl ">$1500</p>
             </div>
             <div className="flex mt-2 justify-between items-center gap-3">
@@ -73,9 +76,9 @@ const Recommended = () => {
               alt=""
               className="rounded-md h-60 object-cover w-full "
             />
-            <p className=" font-bold text-2xl">Hotel of Dubai</p>
+            <p className=" font-semibold text-2xl">Hotel of Dubai</p>
             <div className="flex mt-2 justify-between gap-10">
-              <p className="font-medium text-xl">Dubai</p>
+              <p className=" ">Dubai</p>
               <p className=" font-semibold text-xl ">$1500</p>
             </div>
             <div className="flex mt-2 justify-between items-center gap-3">
@@ -100,9 +103,9 @@ const Recommended = () => {
               alt=""
               className="rounded-md h-60 object-cover w-full "
             />
-            <p className=" font-bold text-2xl">Hotel of Dubai</p>
+            <p className=" font-semibold text-2xl">Hotel of Dubai</p>
             <div className="flex mt-2 justify-between gap-10">
-              <p className="font-medium text-xl">Dubai</p>
+              <p className=" ">Dubai</p>
               <p className=" font-semibold text-xl ">$1500</p>
             </div>
             <div className="flex mt-2 justify-between items-center gap-3">
