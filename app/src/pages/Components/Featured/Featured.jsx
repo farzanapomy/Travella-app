@@ -9,9 +9,10 @@ const Featured = () => {
   return (
     <LayOut>
       <div className="w-full mx-auto my-2">
-        <h1 className="font-bold text-4xl  text-start mb-7">
-          Browse By Feature{' '}
-        </h1>
+        <div className="text-center mb-9 font-[volkhov]">
+          <h1 className="text-3xl mb-1 uppercase">Feature</h1>
+          <h1 className="font-bold text-4xl mb-7">Browse By Feature We Have</h1>
+        </div>
         {loading ? (
           <p>Loading! Please wait.</p>
         ) : error ? (
