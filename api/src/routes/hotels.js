@@ -3,6 +3,7 @@ import {
   createHotel,
   deleteHotel,
   getAllHotel,
+  getByCity,
   getHotel,
   updateHotel,
 } from '../controller/hotel.js';
@@ -17,8 +18,10 @@ router.put('/:id', verifyAdmin, updateHotel);
 // delete
 router.delete('/:id', verifyAdmin, deleteHotel);
 // get
-router.get('/:id', getHotel);
+router.get('/find/:id', getHotel);
 // get all
 router.get('/', getAllHotel);
+router.get('/getByCity', getByCity);
+router.get('/getByType', getAllHotel);
 
 export default router;
