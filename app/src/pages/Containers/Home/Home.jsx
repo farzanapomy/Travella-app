@@ -17,8 +17,8 @@ const Home = () => {
           <Search />
         </div>
       </div>
-      <BrowseHotel />
       <Featured />
+      <BrowseHotel />
       <Recommended />
       <Subscribe />
       <Footer />
