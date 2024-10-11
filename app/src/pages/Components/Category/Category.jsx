@@ -14,7 +14,7 @@ const Category = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-center w-full mx-auto">
           <div className="w-50 hover:bg-[#FFFFFF] hover:shadow-lg p-5 rounded mx-auto">
             <div className="mx-auto w-20 rounded-full  ">
               <img src={tourGuide} alt="" />
