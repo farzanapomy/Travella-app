@@ -4,16 +4,20 @@ import { DateRange } from 'react-date-range';
 import { useLocation } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
-import SearchHotels from '../../Components/SearchHotels/SearchHotels';
 import plane from '../../../assets/plane.svg';
+import useFetch from '../../../hooks/useFatch';
+import { SEARCHHOTELS } from '../../../urls/urls';
+import SearchHotels from '../../Components/SearchHotels/SearchHotels';
 const Hotels = () => {
   const location = useLocation();
-  console.log(location);
   const [destination, setDestination] = useState(location?.state?.destination);
   const [option, setOption] = useState(location?.state?.option);
-
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState(location?.state?.date);
+
+  const { data, loading, error } = useFetch(`${SEARCHHOTELS}${destination}`);
+
+  console.log(data, destination);
   return (
     <div className="">
       <div className=" h-fit object-fill  bg-no-repeat opacity-90  bg-blend-multiply">
@@ -114,11 +118,12 @@ const Hotels = () => {
               </div>
             </div>
             <div className="py-10 col-span-2 grid grid-cols-1  md:grid-cols-3 gap-3">
-              <SearchHotels />
-              <SearchHotels />
-              <SearchHotels />
-              <SearchHotels />
-              <SearchHotels />
+              {loading
+                ? 'Loading'
+                : data &&
+                  data?.map((items, i) => (
+                    <SearchHotels item={items} key={i} />
+                  ))}
             </div>
           </div>
         </div>
