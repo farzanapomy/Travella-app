@@ -35,10 +35,10 @@ const Search = () => {
   };
   return (
     <div className="">
-      <div className=" w-5/6 lg:w-full h-fit mx-auto rounded-md absolute right-0 left-0 -bottom-80 md:-bottom-65 py-8 px-4 md:px-14 bg-[#3A5357] text-white">
+      <div className=" w-5/6 lg:w-full h-fit mx-auto rounded-md absolute right-0 left-0 -bottom-80 md:-bottom-75 py-8 px-4 md:px-14 bg-[#3A5357] opacity-90 text-white">
         <h1 className="mb-3 font-semibold text-2xl">Book your vacation </h1>
         <div className="flex flex-wrap lg:flex-nowrap w-fit md:w-full mx-auto justify-between items-center gap-3 lg:gap-0">
-          <div className="flex justify-between items-center border border-[#979797] rounded-l-lg p-2 gap-2 w-full">
+          <div className="flex justify-between items-center border border-[#979797] rounded-l-lg p-2  gap-2 w-full">
             <div>
               <FaBed />
             </div>
@@ -46,7 +46,7 @@ const Search = () => {
               <input
                 type="text"
                 placeholder="Where are you going?"
-                className="border-none outline-none rounded-md  w-full p-1.5  "
+                className="border-none outline-none rounded-md  w-full p-1.5 text-black  "
                 onChange={(e) => setDestination(e.target.value)}
               />
             </div>
@@ -62,7 +62,7 @@ const Search = () => {
                   {`${moment(date[0]?.endDate).format('MM/DD/YYYY')}`}
                 </span>
               </span>
-              <div className=" bg-[#e5e4cccc]">
+              <div className=" bg-black-2 w-3 ">
                 {openDate && (
                   <DateRange
                     editableDateInputs={true}
@@ -70,7 +70,7 @@ const Search = () => {
                     moveRangeOnFirstSelection={false}
                     ranges={date}
                     minDate={new Date()}
-                    className="absolute bg-black  top-8  right-0 "
+                    className="absolute w-fit  top-8  right-0 "
                   />
                 )}
               </div>
