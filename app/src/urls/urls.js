@@ -4,3 +4,4 @@ export const GETDATABYCITY =
 export const GETDATABYTYPE =
   SERVER +
   'hotels/getByType?types=Hight Luxury Hotel,Cottage,Apartment,Resort,Cabins';
+export const GETSEARCHDATA = SERVER + 'hotels?featured=true&limit=4';
