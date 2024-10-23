@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import apart from '../../../assets/apart.jpg';
 
+// eslint-disable-next-line react/prop-types
 const SearchHotels = ({ item }) => {
   const navigate = useNavigate();
   console.log(item);
