@@ -14,9 +14,15 @@ const Hotels = () => {
   const [option, setOption] = useState(location?.state?.option);
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState(location?.state?.date);
+  const [min, setMin] = useState(undefined);
+  const [max, setMax] = useState(undefined);
 
-  const { data, loading, error } = useFetch(`${SEARCHHOTELS}${destination}`);
-
+  const { data, loading, error, reloadData } = useFetch(
+    `${SEARCHHOTELS}?city=${destination}&min=${min || 0}&max=${max || 99999}`
+  );
+  const handleSearch = () => {
+    reloadData();
+  };
   console.log(data, destination);
   return (
     <div className="">
@@ -68,6 +74,7 @@ const Hotels = () => {
                       type="number"
                       min={0}
                       className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
+                      onChange={(e) => setMin(e.target.value)}
                     />
                   </div>
                   <div>
@@ -78,6 +85,7 @@ const Hotels = () => {
                       type="number"
                       min={0}
                       className="  outline-none rounded-md  w-full p-1.5 border border-[#BCD7D3]"
+                      onChange={(e) => setMax(e.target.value)}
                     />
                   </div>
                   <div>
@@ -107,6 +115,14 @@ const Hotels = () => {
                       min={1}
                     />
                   </div>{' '}
+                </div>{' '}
+                <div>
+                  <button
+                    className="bg-[#91CB82] py-2.5 my-1 px-9 rounded-md  w-full"
+                    onClick={handleSearch}
+                  >
+                    Search
+                  </button>
                 </div>
               </div>
               <div>
