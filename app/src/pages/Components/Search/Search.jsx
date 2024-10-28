@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
@@ -8,6 +8,7 @@ import { IoMdPerson } from 'react-icons/io';
 import { SlCalender } from 'react-icons/sl';
 import './search.css';
 import { useNavigate } from 'react-router-dom';
+import { SearchContext } from '../../../reducer/useSearchReducer';
 const Search = () => {
   const navigate = useNavigate();
   const [openDate, setOpenDate] = useState(false);
@@ -25,12 +26,24 @@ const Search = () => {
     children: 2,
     room: 1,
   });
+  const { dispatch } = useContext(SearchContext);
+
   const handleButton = (name, state) => {
     setOption((pre) => {
       return {
         ...pre,
         [name]: state === 'i' ? option[name] + 1 : option[name] - 1,
       };
+    });
+  };
+
+  const handleSubmit = () => {
+    dispatch({
+      type: 'NEW_SEARCH_STATE',
+      payload: { destination, option, date },
+    });
+    navigate('/hotels', {
+      state: { destination, option, date },
     });
   };
   return (
@@ -157,12 +170,8 @@ const Search = () => {
           </div>
           <div>
             <button
-              className="bg-[#91CB82] py-2.5 px-9 rounded-md md:mx-3 "
-              onClick={() =>
-                navigate('/hotels', {
-                  state: { destination, option, date },
-                })
-              }
+              className="bg-[#91CB82] py-2.5 px-9 rounded-md md:mx-3"
+              onClick={handleSubmit}
             >
               Search
             </button>
