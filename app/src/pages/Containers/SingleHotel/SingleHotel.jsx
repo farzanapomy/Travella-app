@@ -1,19 +1,18 @@
+import { useContext } from 'react';
+import { FaLocationDot } from 'react-icons/fa6';
+import { useParams } from 'react-router-dom';
+import useFetch from '../../../hooks/useFatch';
+import { SearchContext } from '../../../reducer/useSearchReducer';
+import { SEARCHHOTELS } from '../../../urls/urls';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import Subscribe from '../../Components/Subscribe/Subscribe';
-import img from '../../../assets/apart.jpg';
-import img2 from '../../../assets/apart1.jpg';
-import img3 from '../../../assets/apart2.jpg';
-import img4 from '../../../assets/cottage.jpg';
-import { FaLocationDot } from 'react-icons/fa6';
-import useFetch from '../../../hooks/useFatch';
-import { SEARCHHOTELS } from '../../../urls/urls';
-import { useParams } from 'react-router-dom';
 
 const SingleHotel = () => {
   const { id } = useParams();
   const { data, loading, error } = useFetch(`${SEARCHHOTELS}/find/${id}`);
-  console.log(data);
+  const { destination, option, date } = useContext(SearchContext);
+  console.log(destination, option, date);
   return (
     <div className="max-w-[1224px] mx-auto">
       <Navbar />
@@ -58,42 +57,6 @@ const SingleHotel = () => {
                     />
                   </div>;
                 })}
-
-                {/* <div>
-                  <img
-                    src={img2}
-                    alt=""
-                    className="rounded-md h-60  object-cover w-full "
-                  />
-                </div>
-                <div>
-                  <img
-                    src={img3}
-                    alt=""
-                    className="rounded-md h-60   object-cover w-full "
-                  />
-                </div>
-                <div>
-                  <img
-                    src={img}
-                    alt=""
-                    className="rounded-md h-60  object-cover w-full "
-                  />
-                </div>
-                <div>
-                  <img
-                    src={img3}
-                    alt=""
-                    className="rounded-md h-60  object-cover w-full "
-                  />
-                </div>
-                <div>
-                  <img
-                    src={img4}
-                    alt=""
-                    className="rounded-md h-60   object-cover w-full "
-                  />
-                </div> */}
               </div>
               <div className="mt-14">
                 <div>
