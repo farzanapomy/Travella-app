@@ -7,12 +7,20 @@ import { SEARCHHOTELS } from '../../../urls/urls';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import Subscribe from '../../Components/Subscribe/Subscribe';
+import moment from 'moment';
 
 const SingleHotel = () => {
   const { id } = useParams();
   const { data, loading, error } = useFetch(`${SEARCHHOTELS}/find/${id}`);
   const { destination, option, date } = useContext(SearchContext);
   console.log(destination, option, date);
+  let difference;
+  const getDateDifference = () => {
+    const { startDate, endDate } = date[0];
+    difference = moment(endDate).diff(moment(startDate), 'days');
+    return difference;
+  };
+  console.log(typeof getDateDifference());
   return (
     <div className="max-w-[1224px] mx-auto">
       <Navbar />
@@ -65,7 +73,7 @@ const SingleHotel = () => {
                     <p className="items-start">{data?.description}</p>
                     <div className="flex flex-col justify-start items-start flex-grow gap-y-4 shadow-lg p-6">
                       <span className="font-semibold">
-                        Perfect for a night stay
+                        Perfect for {difference} night stay
                       </span>
                       <span>
                         Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -73,9 +81,9 @@ const SingleHotel = () => {
                       </span>
                       <div className="font-bold text-xl">
                         <span>
-                          $1000{' '}
+                          ${difference * data?.cheapestPrice}{' '}
                           <span className="font-normal text-base">
-                            (5 Nights)
+                            ({difference} Nights)
                           </span>
                         </span>
                       </div>
