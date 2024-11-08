@@ -3,11 +3,13 @@ import Home from './pages/Containers/Home/Home';
 import Hotels from './pages/Containers/Hotels/Hotels';
 import SingleHotel from './pages/Containers/SingleHotel/SingleHotel';
 import Login from './pages/Components/Login/Login';
+import Register from './pages/Components/Register/Register';
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/hotels/:id" element={<SingleHotel />} />
