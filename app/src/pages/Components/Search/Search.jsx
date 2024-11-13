@@ -9,6 +9,7 @@ import { SlCalender } from 'react-icons/sl';
 import './search.css';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../../reducer/useSearchReducer';
+
 const Search = () => {
   const navigate = useNavigate();
   const [openDate, setOpenDate] = useState(false);
@@ -23,18 +24,16 @@ const Search = () => {
   const [openGuest, setOpenGuest] = useState(false);
   const [option, setOption] = useState({
     adult: 1,
-    children: 2,
+    children: 0,
     room: 1,
   });
   const { dispatch } = useContext(SearchContext);
 
   const handleButton = (name, state) => {
-    setOption((pre) => {
-      return {
-        ...pre,
-        [name]: state === 'i' ? option[name] + 1 : option[name] - 1,
-      };
-    });
+    setOption((prev) => ({
+      ...prev,
+      [name]: state === 'i' ? option[name] + 1 : option[name] - 1,
+    }));
   };
 
   const handleSubmit = () => {
@@ -46,120 +45,110 @@ const Search = () => {
       state: { destination, option, date },
     });
   };
+
   return (
-    <div className="">
-      <div className=" w-5/6 lg:w-full h-fit mx-auto rounded-md absolute right-0 left-0 -bottom-80 md:-bottom-75 py-8 px-4 md:px-14 bg-[#3A5357] opacity-90 text-white">
-        <h1 className="mb-3 font-semibold text-2xl">Book your vacation </h1>
-        <div className="flex flex-wrap lg:flex-nowrap w-fit md:w-full mx-auto justify-between items-center gap-3 lg:gap-0">
-          <div className="flex justify-between items-center border border-[#979797] rounded-l-lg p-2  gap-2 w-full">
-            <div>
-              <FaBed />
-            </div>
-            <div>
-              <input
-                type="text"
-                placeholder="Where are you going?"
-                className="border-none outline-none rounded-md  w-full p-1.5 text-black  "
-                onChange={(e) => setDestination(e.target.value)}
-              />
-            </div>
+    <div className="w-11/12 mx-auto mt-10">
+      <div className="bg-gray-800 text-white p-6 rounded-lg shadow-md relative bg-[#3A5357]">
+        <h1 className="text-2xl font-bold mb-4">Plan Your Perfect To Stay</h1>
+        <div className="flex flex-wrap gap-4 justify-center items-center  border border-[#979797] rounded">
+          <div className="flex items-center bg-gray-700 p-3 rounded-md w-full lg:w-1/4  border border-[#979797] ">
+            <FaBed className="mr-2 text-lg" />
+            <input
+              type="text"
+              placeholder="Where to?"
+              className="bg-transparent outline-none w-full text-white placeholder-gray-400"
+              onChange={(e) => setDestination(e.target.value)}
+            />
           </div>
-          <div className=" w-full flex justify-between items-center border border-[#979797] p-2 gap-2  ">
-            <div>
-              <SlCalender />
-            </div>
-            <div className="relative py-1.5">
-              <span className="text-[#f5eeee] text-sm ">
-                <span onClick={() => setOpenDate(!openDate)}>
-                  {`${moment(date[0]?.startDate).format('MM/DD/YYYY')}`} to{' '}
-                  {`${moment(date[0]?.endDate).format('MM/DD/YYYY')}`}
-                </span>
+          {/* Date Picker */}
+          <div className="relative w-full lg:w-1/4  border border-[#979797] ">
+            <div
+              onClick={() => setOpenDate(!openDate)}
+              className="flex items-center bg-gray-700 p-3 rounded-md cursor-pointer"
+            >
+              <SlCalender className="mr-2 text-lg" />
+              <span className="text-white text-sm">
+                {`${moment(date[0]?.startDate).format('MM/DD/YYYY')}`} to
+                {`${moment(date[0]?.endDate).format('MM/DD/YYYY')}`}
               </span>
-              <div className=" bg-black-2 w-3 ">
-                {openDate && (
-                  <DateRange
-                    editableDateInputs={true}
-                    onChange={(item) => setDate([item.selection])}
-                    moveRangeOnFirstSelection={false}
-                    ranges={date}
-                    minDate={new Date()}
-                    className="absolute w-fit  top-8  right-0 "
-                  />
-                )}
-              </div>
             </div>
+            {openDate && (
+              <DateRange
+                editableDateInputs={true}
+                onChange={(item) => setDate([item.selection])}
+                moveRangeOnFirstSelection={false}
+                ranges={date}
+                minDate={new Date()}
+                className="absolute z-10 mt-2 bg-white text-gray-800 p-4 rounded-md shadow-md"
+              />
+            )}
           </div>
-          <div className="relative w-full flex  justify-between items-center border border-[#979797] p-3.5  gap-2 rounded-r-lg  ">
-            <div>
-              <IoMdPerson />
-            </div>
-            <div className="">
-              <span
-                className="text-[#f5eeee] text-sm "
-                onClick={() => setOpenGuest(!openGuest)}
-              >
-                {option?.adult} adult {option?.children} Children {option?.room}
-                room
+          {/* Guests */}
+          <div className="relative w-full lg:w-1/4 border border-[#979797] ">
+            <div
+              onClick={() => setOpenGuest(!openGuest)}
+              className="flex items-center bg-gray-700 p-3 rounded-md cursor-pointer"
+            >
+              <IoMdPerson className="mr-2 text-lg" />
+              <span className="text-white text-sm">
+                {option.adult} Adults, {option.children} Children, {option.room}{' '}
+                Room
               </span>
             </div>
             {openGuest && (
-              <div className="absolute top-10 right-0    shadow-3 bg-[#e5e4cccc] p-6  text-sm z-10 rounded-md">
-                <div className="flex justify-between items-center gap-4 mb-2">
-                  <span>Adult</span>
-                  <div className="flex justify-between items-center gap-2">
+              <div className="absolute z-10 mt-2 bg-white text-black text-gray-800 p-4 rounded-md shadow-md w-full lg:w-auto">
+                <div className="flex justify-between items-center mb-2 gap-8">
+                  <span>Adults</span>
+                  <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleButton('adult', 'd')}
                       disabled={option.adult <= 1}
-                      className={`${
-                        option.adult <= 0 && 'cursor-not-allowed'
-                      } border px-1.5`}
+                      className="px-2 py-1 border rounded disabled:opacity-50"
                     >
                       -
                     </button>
                     <span>{option.adult}</span>
                     <button
                       onClick={() => handleButton('adult', 'i')}
-                      className="border px-1.5"
+                      className="px-2 py-1 border rounded"
                     >
                       +
                     </button>
                   </div>
                 </div>
-                <div className="flex justify-between items-center gap-3 mb-2">
+                <div className="flex justify-between items-center mb-2">
                   <span>Children</span>
-                  <div className="flex justify-between items-center gap-2">
+                  <div className="flex items-center gap-2">
                     <button
-                      className="border px-1.5"
                       onClick={() => handleButton('children', 'd')}
                       disabled={option.children <= 0}
+                      className="px-2 py-1 border rounded disabled:opacity-50"
                     >
                       -
                     </button>
                     <span>{option.children}</span>
                     <button
-                      className="border px-1.5"
                       onClick={() => handleButton('children', 'i')}
+                      className="px-2 py-1 border rounded"
                     >
                       +
                     </button>
                   </div>
                 </div>
-                <div className="flex justify-between items-center gap-3">
+                <div className="flex justify-between items-center">
                   <span>Room</span>
-                  <div className="flex justify-between items-center gap-2">
+                  <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleButton('room', 'd')}
                       disabled={option.room <= 1}
-                      className={`${
-                        option.room <= 1 && 'cursor-not-allowed'
-                      } border px-1.5`}
+                      className="px-2 py-1 border rounded disabled:opacity-50"
                     >
                       -
                     </button>
                     <span>{option.room}</span>
                     <button
-                      className="border px-1.5"
                       onClick={() => handleButton('room', 'i')}
+                      className="px-2 py-1 border rounded"
                     >
                       +
                     </button>
@@ -168,14 +157,13 @@ const Search = () => {
               </div>
             )}
           </div>
-          <div>
-            <button
-              className="bg-[#91CB82] py-2.5 px-9 rounded-md md:mx-3"
-              onClick={handleSubmit}
-            >
-              Search
-            </button>
-          </div>
+          {/* Search Button */}
+          <button
+            onClick={handleSubmit}
+            className="bg-[#91CB82] py-2.5 px-9 rounded-md mx-auto  text-white font-semibold hover:bg-green-600 transition"
+          >
+            Search
+          </button>
         </div>
       </div>
     </div>
