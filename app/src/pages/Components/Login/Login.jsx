@@ -20,22 +20,27 @@ const Login = () => {
       [id]: value,
     }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: 'LOGIN_START' });
+
     try {
       const res = await axios.post(LOGIN, auth);
       console.log('Login successful:', res.data);
+
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
     } catch (error) {
       console.error('Login failed:', error);
-      dispatch({
-        type: 'LOGIN_ERROR',
-        payload: error.response?.data || error.message,
-      });
+
+      const errorMessage =
+        error.response?.data?.message ||
+        error.response?.data ||
+        'An unexpected error occurred';
+
+      dispatch({ type: 'LOGIN_ERROR', payload: errorMessage });
     }
   };
+
   console.log(user);
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url('https://www.elgouna.com/images/hotels/the-three-corners-ocean-view-hotel-thumbnail.jpg')]">
@@ -73,7 +78,7 @@ const Login = () => {
             </div>
 
             {error && (
-              <p className="text-center text-red-500 text-sm mb-4">{error}</p>
+              <p className="text-center text-[#FF0000] text-sm mb-4">{error}</p>
             )}
             {loading && (
               <p className="text-center text-yellow-400 text-sm mb-4">
