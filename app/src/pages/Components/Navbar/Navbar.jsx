@@ -34,10 +34,10 @@ const Navbar = () => {
           ) : (
             <div className="mx-4 mt-10 mb-6">
               <Link to={'/register'}>
-                <button className="mr-4">Register</button>{' '}
+                <button className="mr-4">Register</button>
               </Link>
               <Link to={'/login'}>
-                <button >Login</button>
+                <button>Login</button>
               </Link>
             </div>
           )}
