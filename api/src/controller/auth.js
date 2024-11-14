@@ -25,27 +25,32 @@ export const login = async (req, res, next) => {
     if (!user) {
       return next(errorFunction(404, 'User not found'));
     }
+
     const isPasswordCorrect = await bcrypt.compare(
       req.body.password,
       user.password
     );
     if (!isPasswordCorrect) {
-      next(errorFunction(400, 'wrong password'));
+      return next(errorFunction(400, 'Wrong password'));
     }
+
     const token = jwt.sign(
       {
         id: user._id,
         isAdmin: user.isAdmin,
       },
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
+      { expiresIn: '1d' }
     );
+
     const { password, isAdmin, ...other } = user._doc;
+
     res
       .cookie('access_token', token, {
         httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
       })
-      .status(201)
-      .send(other)
+      .status(200)
       .json(other);
   } catch (error) {
     next(error);
