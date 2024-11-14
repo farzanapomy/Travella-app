@@ -8,12 +8,12 @@ const useFetch = (url) => {
     const getData = async () => {
       setLoading(true);
       try {
-        console.log('hello world', url);
+        // console.log('hello world', url);
         const res = await axios.get(url);
-        console.log(res.data);
+        // console.log(res.data);
         setData(res.data);
       } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         setError(error);
       }
       setLoading(false);
