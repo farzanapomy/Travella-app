@@ -3,7 +3,7 @@ import { AuthContext } from '../../../reducer/useAuthReducer';
 import axios from 'axios';
 import { LOGIN } from '../../../urls/urls';
 import Logo from '../Logo/Logo';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [auth, setAuth] = useState({
@@ -12,7 +12,7 @@ const Login = () => {
   });
 
   const { user, dispatch, loading, error } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     const { id, value } = e.target;
     setAuth((prev) => ({
@@ -27,7 +27,7 @@ const Login = () => {
     try {
       const res = await axios.post(LOGIN, auth);
       console.log('Login successful:', res.data);
-
+      navigate('/');
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
     } catch (error) {
       console.error('Login failed:', error);
@@ -90,6 +90,7 @@ const Login = () => {
               <button
                 type="submit"
                 className="rounded-3xl bg-yellow-400 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
+                disabled={loading}
               >
                 Login
               </button>
