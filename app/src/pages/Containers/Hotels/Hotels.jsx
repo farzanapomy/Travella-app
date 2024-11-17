@@ -1,13 +1,14 @@
 import moment from 'moment';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { DateRange } from 'react-date-range';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import plane from '../../../assets/plane.svg';
 import useFetch from '../../../hooks/useFatch';
 import { SEARCHHOTELS } from '../../../urls/urls';
 import SearchHotels from '../../Components/SearchHotels/SearchHotels';
+import { AuthContext } from '../../../reducer/useAuthReducer';
 const Hotels = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location?.state?.destination);
@@ -23,6 +24,7 @@ const Hotels = () => {
   const handleSearch = () => {
     reloadData();
   };
+
   console.log(data, destination);
   return (
     <div className="">
