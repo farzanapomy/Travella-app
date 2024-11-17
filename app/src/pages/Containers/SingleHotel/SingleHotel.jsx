@@ -1,6 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { FaLocationDot } from 'react-icons/fa6';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useFetch from '../../../hooks/useFatch';
 import { SearchContext } from '../../../reducer/useSearchReducer';
 import { SEARCHHOTELS } from '../../../urls/urls';
@@ -8,19 +8,34 @@ import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import Subscribe from '../../Components/Subscribe/Subscribe';
 import moment from 'moment';
+import { AuthContext } from '../../../reducer/useAuthReducer';
+import BookModal from '../../Components/BookModal/BookModal';
 
 const SingleHotel = () => {
   const { id } = useParams();
   const { data, loading, error } = useFetch(`${SEARCHHOTELS}/find/${id}`);
   const { destination, option, date } = useContext(SearchContext);
+  const [openModal, setOpenModal] = useState(false);
+  const { user } = useContext(AuthContext);
+  const nav = useNavigate();
   console.log(destination, option, date);
   let difference;
   const getDateDifference = () => {
-    const { startDate, endDate } = date[0];
-    difference = moment(endDate).diff(moment(startDate), 'days');
-    return difference;
+    if (date && date[0] && date[0].startDate && date[0].endDate) {
+      const { startDate, endDate } = date[0];
+      difference = moment(endDate).diff(moment(startDate), 'days');
+      return difference > 0 ? difference : 1;
+    }
+    return 1;
   };
-  console.log(typeof getDateDifference());
+
+  const handleClick = () => {
+    if (user) {
+      setOpenModal(true);
+    } else {
+      nav('/login');
+    }
+  };
   return (
     <div className="max-w-[1224px] mx-auto">
       <Navbar />
@@ -50,7 +65,10 @@ const SingleHotel = () => {
                   </span>
                 </div>
                 <div className="w-fit">
-                  <button className="px-2 p-1 rounded-md flex-1 bg-[#3A5357]  text-white mx-auto text-center">
+                  <button
+                    className="px-2 p-1 rounded-md flex-1 bg-[#3A5357]  text-white mx-auto text-center"
+                    onClick={handleClick}
+                  >
                     Reverse Or Book Now
                   </button>
                 </div>
@@ -81,7 +99,8 @@ const SingleHotel = () => {
                       </span>
                       <div className="font-bold text-xl">
                         <span>
-                          ${difference * data?.cheapestPrice}{' '}
+                          {/* ${difference * data?.cheapestPrice}{' '} */}$
+                          {getDateDifference() * data?.cheapestPrice}{' '}
                           <span className="font-normal text-base">
                             ({difference} Nights)
                           </span>
@@ -98,6 +117,7 @@ const SingleHotel = () => {
               </div>
             </div>
           )}
+      {openModal && <BookModal setOpenModal={setOpenModal} id={id} />}
       <Subscribe />
       <Footer />
     </div>
