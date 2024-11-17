@@ -47,7 +47,7 @@ const Search = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto mt-10">
+    <div className="w-full mx-auto mt-10 px-5">
       <div className="bg-gray-800 text-white p-6 rounded-lg shadow-md relative bg-[#3A5357]">
         <h1 className="text-2xl font-bold mb-4">Plan Your Perfect To Stay</h1>
         <div className="flex flex-wrap gap-4 justify-center items-center  border border-[#979797] rounded">
