@@ -70,3 +70,17 @@ export const getAllRoom = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getHotelRooms = async (req, res, next) => {
+  try {
+    const hotel = await Hotel.findById(req.params.hotelId);
+    const rooms = await Promise.all(
+      hotel.rooms.map((id) => {
+        return Room.findById(id);
+      })
+    );
+    return res.status(200).json(rooms);
+  } catch (error) {
+    next(error);
+  }
+};
