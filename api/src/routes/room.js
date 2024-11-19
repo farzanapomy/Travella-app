@@ -3,6 +3,7 @@ import {
   createRoom,
   deleteRoom,
   getAllRoom,
+  getHotelRooms,
   getRoom,
   updateRoom,
 } from '../controller/room.js';
@@ -20,5 +21,7 @@ router.delete('/:id/:hotelId', verifyAdmin, deleteRoom);
 router.get('/:id', getRoom);
 // get all
 router.get('/', getAllRoom);
+// get hotel rooms
+router.get('/getHotelRoom/:hotelId', getHotelRooms);
 
 export default router;
