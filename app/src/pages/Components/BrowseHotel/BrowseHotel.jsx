@@ -4,7 +4,7 @@ import hotel3 from '../../../assets/hotel3.jpg';
 import hotel4 from '../../../assets/hotel4.jpg';
 import cottage from '../../../assets/cottage.jpg';
 import LayOut from '../LayOut/LayOut';
-import useFetch from '../../../hooks/useFatch';
+import useFetch from '../../../hooks/useFetch';
 import { GETDATABYTYPE } from '../../../urls/urls';
 
 const BrowseHotel = () => {
