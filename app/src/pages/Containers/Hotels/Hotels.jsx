@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import plane from '../../../assets/plane.svg';
-import useFetch from '../../../hooks/useFatch';
+import useFetch from '../../../hooks/useFetch';
 import { SEARCHHOTELS } from '../../../urls/urls';
 import SearchHotels from '../../Components/SearchHotels/SearchHotels';
 import { AuthContext } from '../../../reducer/useAuthReducer';

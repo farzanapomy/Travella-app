@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { FaLocationDot } from 'react-icons/fa6';
 import { useNavigate, useParams } from 'react-router-dom';
-import useFetch from '../../../hooks/useFatch';
+import useFetch from '../../../hooks/useFetch';
 import { SearchContext } from '../../../reducer/useSearchReducer';
 import { SEARCHHOTELS } from '../../../urls/urls';
 import Footer from '../../Components/Footer/Footer';
