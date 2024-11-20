@@ -8,3 +8,4 @@ export const GETDATABYTYPE =
   'hotels/getByType?types=Hight Luxury Hotel,Cottage,Apartment,Resort,Cabins';
 export const GETSEARCHDATA = SERVER + 'hotels?featured=true&limit=4';
 export const SEARCHHOTELS = SERVER + `hotels`;
+export const GETHOTELROOMS = SERVER + 'rooms/getHotelRoom';
