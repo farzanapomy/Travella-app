@@ -4,7 +4,7 @@ import rating3 from '../../../assets/rating3.jpg';
 import rating4 from '../../../assets/rating4.jpg';
 import { CiStar } from 'react-icons/ci';
 import LayOut from '../LayOut/LayOut';
-import useFetch from '../../../hooks/useFatch';
+import useFetch from '../../../hooks/useFetch';
 import { GETSEARCHDATA } from '../../../urls/urls';
 
 const Recommended = () => {
