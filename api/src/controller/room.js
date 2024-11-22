@@ -79,7 +79,8 @@ export const getHotelRooms = async (req, res, next) => {
         return Room.findById(id);
       })
     );
-    return res.status(200).json(rooms);
+    const validRooms = rooms.filter((room) => room !== null);
+    return res.status(200).json(validRooms);
   } catch (error) {
     next(error);
   }
