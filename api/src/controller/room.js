@@ -85,3 +85,19 @@ export const getHotelRooms = async (req, res, next) => {
     next(error);
   }
 };
+
+export const updateRoomIsBooked = async (req, res, next) => {
+  try {
+    await Room.updateOne(
+      { 'roomInfo._id': req.params.id },
+      {
+        $push: {
+          'roomInfo.$.bookedDates': req.body.dates,
+        },
+      }
+    );
+    res.status(200).json('Room Date added successfully');
+  } catch (error) {
+    next(error);
+  }
+};
