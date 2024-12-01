@@ -6,6 +6,7 @@ import {
   getHotelRooms,
   getRoom,
   updateRoom,
+  updateRoomIsBooked,
 } from '../controller/room.js';
 import { verifyAdmin } from '../utils/verifyToken.js';
 
@@ -15,6 +16,7 @@ const router = express.Router();
 router.post('/create-rooms/:hotelId', verifyAdmin, createRoom);
 // update
 router.put('/:id', verifyAdmin, updateRoom);
+router.put('/isBooked/:id', updateRoomIsBooked);
 // delete
 router.delete('/:id/:hotelId', verifyAdmin, deleteRoom);
 // get
