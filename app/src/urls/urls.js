@@ -9,3 +9,4 @@ export const GETDATABYTYPE =
 export const GETSEARCHDATA = SERVER + 'hotels?featured=true&limit=4';
 export const SEARCHHOTELS = SERVER + `hotels`;
 export const GETHOTELROOMS = SERVER + 'rooms/getHotelRoom';
+export const GETDATEAVAIL = SERVER + 'rooms/isBooked';
