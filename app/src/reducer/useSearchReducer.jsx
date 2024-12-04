@@ -42,4 +42,3 @@ export const SearchContextProvider = ({ children }) => {
     </SearchContext.Provider>
   );
 };
-
