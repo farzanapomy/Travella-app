@@ -51,7 +51,7 @@ export const login = async (req, res, next) => {
         secure: process.env.NODE_ENV === 'production',
       })
       .status(200)
-      .json(other);
+      .json({ isAdmin, ...other });
   } catch (error) {
     next(error);
   }
