@@ -27,7 +27,7 @@ const Login = () => {
     try {
       const res = await axios.post(LOGIN, auth);
       console.log('Login successful:', res.data);
-      navigate('/');
+      res?.data?.isAdmin ? navigate('/adminDashboard') : navigate('/');
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
     } catch (error) {
       console.error('Login failed:', error);
