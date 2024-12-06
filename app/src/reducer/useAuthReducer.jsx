@@ -31,7 +31,11 @@ const AuthAction = (state, action) => {
         error: action.payload,
       };
     case 'LOGOUT':
-      return INITIAL_STATE;
+      return {
+        user: null,
+        loading: false,
+        error: null,
+      };
     default:
       return state;
   }
