@@ -6,8 +6,15 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../reducer/useAuthReducer';
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { dispatch } = useContext(AuthContext);
+  const handleSubmit = () => {
+    console.log('object');
+    try {
+      dispatch({ type: 'LOGOUT' });
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
   return (
     <div className={`w-full border-opacity-40 mx-auto  `}>
       <div className="">
@@ -29,7 +36,7 @@ const Navbar = () => {
           </div>
           {user ? (
             <>
-              <button>Logout</button>
+              <button onClick={handleSubmit}>Logout</button>
             </>
           ) : (
             <div className="mx-4 mt-10 mb-6">
